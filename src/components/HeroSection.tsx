@@ -151,15 +151,15 @@ export default function HeroSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <section ref={sectionRef} className="relative z-0 h-screen flex items-center justify-center mb-16">
+    <section ref={sectionRef} className="relative z-0 min-h-screen flex items-center justify-center mb-16 pt-16 md:pt-16">
       <div className="px-5 md:px-20 w-full">
-        {/* Main Hero Content - 2 Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center max-w-7xl mx-auto">
+        {/* Main Hero Content - Mobile First Layout */}
+        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           
-          {/* Left Column - Profile Photo */}
-          <div className="flex justify-center">
+          {/* Profile Photo - First on mobile */}
+          <div className="flex justify-center order-1 lg:order-1">
             <div ref={profileRef} className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 p-1 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">
+              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 p-1 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">
                 <img 
                   src="/jerun_prifile.png" 
                   alt="Jerun Kingston"
@@ -168,20 +168,20 @@ export default function HeroSection() {
               </div>
               {/* Animated ring */}
               <div className="absolute inset-0 rounded-full border-2 border-purple-400/30 animate-ping"></div>
-              {/* Floating elements */}
-              <div className="floating-element absolute -top-4 -right-4 w-8 h-8 bg-purple-400 rounded-full"></div>
-              <div className="floating-element absolute -bottom-6 -left-6 w-6 h-6 bg-pink-400 rounded-full"></div>
-              <div className="floating-element absolute top-1/2 -left-8 w-4 h-4 bg-cyan-400 rounded-full"></div>
+              {/* Floating elements - responsive sizes */}
+              <div className="floating-element absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-purple-400 rounded-full"></div>
+              <div className="floating-element absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 bg-pink-400 rounded-full"></div>
+              <div className="floating-element absolute top-1/2 -left-4 sm:-left-6 md:-left-8 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-cyan-400 rounded-full"></div>
             </div>
           </div>
 
-          {/* Right Column - Details */}
-          <div className="lg:col-span-2 text-center">
+          {/* Content - Second on mobile */}
+          <div className="lg:col-span-2 text-center order-2 lg:order-2">
             {/* Hero Text with Typewriter Animation */}
-            <div ref={textRef} className="mb-8">
-              <div className="flex items-center justify-center gap-4 mb-6 text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-normal">
-                <span>I'm</span>
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent min-h-[1.5em] flex items-baseline">
+            <div ref={textRef} className="mb-6 lg:mb-8">
+              <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-1 sm:gap-4 mb-4 sm:mb-6">
+                <span className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">I'm</span>
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight min-h-[1.2em] sm:min-h-[1.5em] flex items-baseline">
                   {displayedText}
                   <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
                 </span>
@@ -189,21 +189,21 @@ export default function HeroSection() {
             </div>
 
             {/* Subtitle */}
-            <div ref={subtitleRef} className="mb-8">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-gray-300 mb-4">
+            <div ref={subtitleRef} className="mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-300 mb-3 sm:mb-4">
                 {personalInfo.title}
               </h2>
-              <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto px-4 sm:px-0">
                 {personalInfo.tagline}
               </p>
             </div>
 
             {/* Tech Stack */}
-            <div ref={techStackRef} className="flex flex-wrap justify-center gap-3 mb-8">
+            <div ref={techStackRef} className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 lg:mb-8 px-4 sm:px-0">
               {techStack.featured.map((tech) => (
                 <span 
                   key={tech}
-                  className="px-4 py-2 bg-gray-900 border border-gray-700 rounded-full text-sm font-medium hover:bg-gray-800 hover:border-purple-400/50 transition-all duration-300 cursor-pointer"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-900 border border-gray-700 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-800 hover:border-purple-400/50 transition-all duration-300 cursor-pointer"
                 >
                   {tech}
                 </span>
@@ -211,11 +211,11 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300">
+            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+              <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 text-sm sm:text-base">
                 View My Work
               </button>
-              <button className="px-8 py-3 border border-gray-700 text-gray-300 font-semibold rounded-full hover:border-purple-400/50 hover:text-white transition-all duration-300">
+              <button className="px-6 sm:px-8 py-2.5 sm:py-3 border border-gray-700 text-gray-300 font-semibold rounded-full hover:border-purple-400/50 hover:text-white transition-all duration-300 text-sm sm:text-base">
                 Get In Touch
               </button>
             </div>
@@ -223,12 +223,12 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-        <div ref={scrollIndicatorRef} className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-8 h-12 border-2 border-gray-300 rounded-full flex justify-center items-start pt-2">
-              <div className="w-1 h-3 bg-white rounded-full animate-bounce"></div>
+        <div ref={scrollIndicatorRef} className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex flex-col items-center gap-2 sm:gap-4">
+            <div className="w-6 h-10 sm:w-8 sm:h-12 border-2 border-gray-300 rounded-full flex justify-center items-start pt-1.5 sm:pt-2">
+              <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white rounded-full animate-bounce"></div>
             </div>
-            <p className="text-sm text-gray-400">Scroll to explore</p>
+            <p className="text-xs sm:text-sm text-gray-400">Scroll to explore</p>
           </div>
         </div>
       </div>

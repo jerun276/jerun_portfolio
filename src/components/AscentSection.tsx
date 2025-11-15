@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AscentSection() {
   const [activeProject, setActiveProject] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -60,7 +59,7 @@ export default function AscentSection() {
         }
       });
 
-      // Animate timeline progress bar fill
+      // Animate timeline progress bar fill with smooth scrub
       if (timelineRef.current) {
         const progressBar = timelineRef.current.querySelector('.progress-bar');
         if (progressBar) {
@@ -68,13 +67,17 @@ export default function AscentSection() {
             { width: '0%' },
             {
               width: '100%',
-              duration: 2,
-              ease: "power2.out",
+              ease: "none",
               scrollTrigger: {
-                trigger: timelineRef.current,
-                start: "top 70%",
-                end: "bottom 30%",
-                scrub: 1
+                trigger: sectionRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 0.5,
+                onUpdate: (self) => {
+                  // Update progress bar smoothly based on scroll progress
+                  const progress = self.progress;
+                  gsap.set(progressBar, { width: `${progress * 100}%` });
+                }
               }
             }
           );
@@ -221,30 +224,6 @@ export default function AscentSection() {
     return () => ctx.revert();
   }, []);
 
-  // Scroll-triggered animations for progress tracking
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const inView = rect.top < windowHeight && rect.bottom > 0;
-      setIsVisible(inView);
-      
-      // Calculate scroll progress for timeline
-      const scrolled = Math.max(0, windowHeight - rect.top);
-      const total = windowHeight + rect.height;
-      const progress = Math.min(scrolled / total, 1);
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   // Auto-rotate projects
   useEffect(() => {
     const interval = setInterval(() => {
@@ -283,8 +262,7 @@ export default function AscentSection() {
           <div className="w-full max-w-4xl">
             <div className="relative h-2 bg-gray-800 rounded-full overflow-hidden">
               <div 
-                className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 transition-all duration-1000 ease-out"
-                style={{ width: `${scrollProgress * 100}%` }}
+                className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400"
               ></div>
             </div>
             <div className="flex justify-between mt-4 text-sm text-gray-400">
