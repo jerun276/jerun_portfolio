@@ -4,7 +4,7 @@ export const personalInfo = {
   title: "Software Engineer & AI Innovator",
   tagline: "Building Innovative Solutions with Cutting-Edge Technology",
   email: "jerunkingston@gmail.com",
-  phone: "+94 (77) 123-4567",
+  phone: "+94 (76) 354-5171",
   location: "Jaffna, Northern Province, Sri Lanka",
   
   // Status
@@ -18,9 +18,10 @@ export const personalInfo = {
   
   // Social Links
   social: {
-    linkedin: "https://www.linkedin.com/in/jerun-kingston-4538592bb",
-    github: "https://github.com/jerunkingston",
-    twitter: "https://twitter.com/jerunkingston",
+    linkedin: "https://www.linkedin.com/in/jerun-kingston-4538592bb/",
+    github: "https://github.com/jerun276",
+    facebook: "https://www.facebook.com/jerun.kingston",
+    instagram: "https://www.instagram.com/jerun_kingston/",
     portfolio: "https://jerunkingston.dev",
     email: "mailto:jerunkingston@gmail.com"
   },

@@ -293,21 +293,23 @@ export default function CurrentFrontierSection() {
         </div>
 
         {/* Tab Navigation */}
-        <div ref={tabsRef} className="flex justify-center mb-16">
-          <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-2">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`tab-button px-6 py-3 rounded-xl transition-all duration-300 ${
-                  activeTab === index
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                    : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+        <div ref={tabsRef} className="flex justify-center mb-16 px-4">
+          <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-2 w-full max-w-2xl">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-0">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTab(index)}
+                  className={`tab-button px-4 sm:px-6 py-3 rounded-xl transition-all duration-300 text-sm sm:text-base flex-1 ${
+                    activeTab === index
+                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                      : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

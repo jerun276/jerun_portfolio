@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   description: "An animated portfolio showcasing the professional journey of Jerun Kingston through interactive storytelling and advanced web animations.",
   keywords: ["portfolio", "web developer", "animation", "GSAP", "Next.js", "Jerun Kingston"],
   authors: [{ name: "Jerun Kingston" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.ico", sizes: "16x16" },
+    ],
+    apple: [
+      { url: "/favicon.ico", sizes: "180x180" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/favicon.ico",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

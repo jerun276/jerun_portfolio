@@ -113,7 +113,7 @@ export const sectionContent = {
       {
         name: "Accurity",
         tech: "Flutter, Cross-platform, Supabase, Inspection-app",
-        impact: "Applied Software Engineering principles.",
+        impact: "Offline First Mobile Inspection App",
         description: "Accurity is a Flutter-based mobile inspection application designed for order inspection and management. It's a cross-platform application built for Android, iOS, Linux, macOS, and Windows.",
         image: "/projects/accurity.jpg",
         githubUrl: "https://github.com/jerun276/Accurity",
@@ -191,8 +191,8 @@ export const sectionContent = {
       {
         type: "phone",
         label: "Phone",
-        value: "+94 (77) 123-4567",
-        url: "tel:+94771234567"
+        value: "+94 (76) 354-5171",
+        url: "tel:+94763545171"
       },
       {
         type: "location",
@@ -202,7 +202,7 @@ export const sectionContent = {
       }
     ],
 
-    footer: "© 2024 Jerun Kingston. Built with Next.js & GSAP."
+    footer: "© 2025 Jerun Kingston. Built with Next.js & GSAP."
   }
 };
 
