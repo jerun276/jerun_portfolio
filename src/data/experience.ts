@@ -17,87 +17,45 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    id: "senior-fullstack-dev",
-    title: "Senior Full Stack Developer",
-    company: "TechFlow Solutions",
-    location: "San Francisco, CA",
+    id: "unicom-tic-developer",
+    title: "TIC Developer",
+    company: "Unicom",
+    location: "Jaffna, Northern Province, Sri Lanka",
     type: "work",
-    startDate: "2023-08",
+    startDate: "2025-04",
     current: true,
-    description: "Leading the development of enterprise-grade web applications serving 100k+ users. Responsible for technical architecture, code quality, and mentoring a team of junior developers.",
+    description: "Developing innovative technology solutions and contributing to cutting-edge projects in telecommunications and information technology sector.",
     achievements: [
-      "Architected scalable microservices handling 500k+ daily requests",
-      "Implemented real-time features reducing user wait time by 75%",
-      "Led migration to TypeScript improving code quality by 40%",
-      "Mentored 4 junior developers, 3 received promotions",
-      "Reduced deployment time from 45min to 8min with CI/CD optimization"
+      "Contributing to enterprise-level software development projects",
+      "Implementing modern development practices and methodologies",
+      "Collaborating with cross-functional teams on technology initiatives",
+      "Gaining hands-on experience in professional software development"
     ],
-    technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "AWS", "Docker"],
-    skills: ["Team Leadership", "System Architecture", "Performance Optimization", "Mentoring"],
-    website: "https://techflowsolutions.com"
+    technologies: ["Flutter", "React.js", "Node.js", "Express.js", "SQLite", "Mobile Development"],
+    skills: ["Software Development", "Mobile App Development", "Team Collaboration", "Problem Solving"],
+    website: "https://unicom.lk"
   },
   
   {
-    id: "freelance-consultant",
-    title: "Freelance Web Developer",
-    company: "Self-Employed",
-    location: "Remote",
-    type: "freelance",
-    startDate: "2022-06",
-    endDate: "2023-07",
-    current: false,
-    description: "Built custom web solutions for small to medium businesses. Specialized in e-commerce platforms, business websites, and web applications with focus on performance and user experience.",
+    id: "aiesec-member",
+    title: "Member",
+    company: "AIESEC in SLIIT",
+    location: "Sri Lanka",
+    type: "volunteer",
+    startDate: "2025-02",
+    current: true,
+    description: "Active member of AIESEC, the world's largest youth-led organization. Participating in leadership development programs, cultural exchange initiatives, and community impact projects.",
     achievements: [
-      "Completed 12 successful projects with 100% client satisfaction",
-      "Increased client website traffic by average of 150%",
-      "Built e-commerce solutions generating $50k+ in client revenue",
-      "Established repeat business with 6 long-term clients",
-      "Delivered projects 20% faster than industry average"
+      "Participating in leadership development workshops and training",
+      "Contributing to community service and social impact projects",
+      "Developing cross-cultural communication and teamwork skills",
+      "Networking with international students and professionals"
     ],
-    technologies: ["React", "Next.js", "WordPress", "Shopify", "Node.js", "MongoDB", "Stripe"],
-    skills: ["Client Communication", "Project Management", "E-commerce Development"]
+    technologies: ["Project Management Tools", "Communication Platforms", "Digital Marketing"],
+    skills: ["Leadership", "Cross-Cultural Communication", "Project Management", "Community Service"]
   },
   
-  {
-    id: "frontend-developer",
-    title: "Junior Frontend Developer",
-    company: "Digital Innovations Co.",
-    location: "Austin, TX",
-    type: "work",
-    startDate: "2021-09",
-    endDate: "2022-05",
-    current: false,
-    description: "Developed responsive web interfaces and collaborated with senior developers to build user-friendly applications. Focused on learning modern frontend technologies and best practices.",
-    achievements: [
-      "Built 15+ responsive web components used across 3 products",
-      "Improved website loading speed by 30% through optimization",
-      "Collaborated with design team to implement pixel-perfect UIs",
-      "Completed React certification and advanced JavaScript training"
-    ],
-    technologies: ["React", "JavaScript", "CSS3", "HTML5", "Git", "Figma"],
-    skills: ["Frontend Development", "Responsive Design", "Team Collaboration"],
-    website: "https://digitalinnovations.com"
-  },
   
-  {
-    id: "first-internship",
-    title: "Software Development Intern",
-    company: "StartupLab",
-    location: "Remote",
-    type: "work",
-    startDate: "2021-06",
-    endDate: "2021-08",
-    current: false,
-    description: "First professional software development experience in a fast-paced startup environment. Worked on frontend features and learned industry best practices for web development.",
-    achievements: [
-      "Developed 5 user interface components used in production",
-      "Fixed 20+ bugs improving overall application stability",
-      "Learned React, Git workflows, and Agile development practices",
-      "Received 'Outstanding Intern' recognition from team lead"
-    ],
-    technologies: ["React", "JavaScript", "CSS3", "Git", "HTML5"],
-    skills: ["Web Development", "Problem Solving", "Team Collaboration"]
-  }
 ];
 
 // Education Data
@@ -117,32 +75,78 @@ export interface Education {
 
 export const education: Education[] = [
   {
-    id: "btech-cs",
-    degree: "Bachelor of Science",
-    field: "Computer Science",
-    institution: "California State University",
-    location: "San Francisco, CA",
-    startDate: "2017-09",
-    endDate: "2021-05",
-    gpa: "3.7/4.0",
+    id: "sliit-btech",
+    degree: "Bachelor's Degree",
+    field: "Computer Software Engineering",
+    institution: "Sri Lanka Institute of Information Technology (SLIIT)",
+    location: "Colombo, Sri Lanka",
+    startDate: "2024-07",
+    endDate: "2028-07",
     achievements: [
-      "Dean's List for Academic Excellence (4 semesters)",
-      "Winner - Annual Coding Competition 2020",
-      "CS Student Association - Secretary (2019-2020)",
-      "Volunteer Coding Instructor for local high school students"
+      "Currently pursuing degree in Computer Software Engineering",
+      "Active participant in university tech communities",
+      "Member of AIESEC in SLIIT chapter",
+      "Published research on AI-powered smart homes with Tesla coil wireless energy"
     ],
     relevantCourses: [
-      "Data Structures & Algorithms",
-      "Web Development Fundamentals",
-      "Database Management Systems",
       "Software Engineering Principles",
+      "Data Structures & Algorithms",
+      "Mobile Application Development",
+      "Web Development Technologies",
+      "Database Management Systems",
+      "Artificial Intelligence & Machine Learning",
       "Computer Networks",
       "Human-Computer Interaction"
     ],
     projects: [
-      "Student Grade Management System (Java)",
-      "Personal Finance Tracker (React)",
-      "Campus Food Delivery App (MERN Stack)"
+      "AI-powered Smart Home System",
+      "Spark Movie Ticket Booking System",
+      "School Management System"
+    ]
+  },
+  {
+    id: "icbt-diploma",
+    degree: "Diploma of Education",
+    field: "Information Technology",
+    institution: "ICBT Campus",
+    location: "Sri Lanka",
+    startDate: "2023-07",
+    endDate: "2024-12",
+    achievements: [
+      "Completed comprehensive IT education program",
+      "Gained foundation in educational technology strategies",
+      "Developed skills in digital learning methodologies",
+      "Prepared for advanced software engineering studies"
+    ],
+    relevantCourses: [
+      "Information Technology Fundamentals",
+      "Educational Technology",
+      "Digital Learning Strategies",
+      "Computer Programming Basics",
+      "Database Fundamentals",
+      "Web Technologies Introduction"
+    ]
+  },
+  {
+    id: "jaffna-hindu-college",
+    degree: "Advanced Level",
+    field: "Business/Commerce, Accounting, ICT",
+    institution: "Jaffna Hindu College",
+    location: "Jaffna, Northern Province, Sri Lanka",
+    startDate: "2020-01",
+    endDate: "2022-12",
+    achievements: [
+      "Completed Advanced Level studies with focus on ICT",
+      "Strong foundation in business and accounting principles",
+      "Early exposure to information and communication technology",
+      "Prepared for higher education in technology field"
+    ],
+    relevantCourses: [
+      "Information & Communication Technology",
+      "Business Studies",
+      "Accounting",
+      "Economics",
+      "Mathematics"
     ]
   }
 ];
@@ -160,20 +164,46 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
-    id: "aws-solutions-architect",
-    name: "AWS Solutions Architect Associate",
-    issuer: "Amazon Web Services",
-    date: "2024-03",
-    credentialId: "AWS-SAA-123456",
-    url: "https://aws.amazon.com/certification/",
-    skills: ["Cloud Architecture", "AWS Services", "System Design"]
+    id: "supervised-ml",
+    name: "Supervised Machine Learning: Regression and Classification",
+    issuer: "Coursera/Stanford University",
+    date: "2024-06",
+    skills: ["Machine Learning", "Regression Analysis", "Classification Algorithms", "Python"]
   },
   {
-    id: "react-advanced",
-    name: "Advanced React Development",
-    issuer: "Meta",
-    date: "2023-11",
-    skills: ["React", "Performance Optimization", "Testing"]
+    id: "english-fluency-b2",
+    name: "English Fluency Equivalent to CEFR Level B2",
+    issuer: "Language Assessment Authority",
+    date: "2024-03",
+    skills: ["English Communication", "Professional Writing", "Technical Documentation"]
+  },
+  {
+    id: "career-skills-software-dev",
+    name: "Introduction to Career Skills in Software Development",
+    issuer: "Professional Development Institute",
+    date: "2024-01",
+    skills: ["Software Development", "Career Planning", "Professional Skills", "Industry Best Practices"]
+  },
+  {
+    id: "programming-foundations",
+    name: "Programming Foundations: Fundamentals",
+    issuer: "LinkedIn Learning",
+    date: "2023-12",
+    skills: ["Programming Fundamentals", "Problem Solving", "Algorithm Design", "Code Structure"]
+  },
+  {
+    id: "web-design-beginners",
+    name: "Web Design for Beginners",
+    issuer: "Online Learning Platform",
+    date: "2023-10",
+    skills: ["Web Design", "UI/UX Principles", "HTML/CSS", "Responsive Design"]
+  },
+  {
+    id: "google-digital-marketing",
+    name: "Digital Marketing and E-commerce Certification",
+    issuer: "Google",
+    date: "2024-02",
+    skills: ["Digital Marketing", "E-commerce", "SEO", "Social Media Marketing", "Analytics"]
   }
 ];
 

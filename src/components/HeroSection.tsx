@@ -151,7 +151,7 @@ export default function HeroSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <section ref={sectionRef} className="relative z-0 min-h-screen flex items-center justify-center mb-16 pt-16 md:pt-16">
+    <section ref={sectionRef} className="relative z-0 min-h-screen flex items-center justify-center mb-8 pt-1 md:pt-1">
       <div className="px-5 md:px-20 w-full">
         {/* Main Hero Content - Mobile First Layout */}
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
@@ -212,10 +212,26 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-              <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 text-sm sm:text-base">
+              <button 
+                onClick={() => {
+                  const ascentSection = document.getElementById('ascent');
+                  if (ascentSection) {
+                    ascentSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 text-sm sm:text-base cursor-pointer"
+              >
                 View My Work
               </button>
-              <button className="px-6 sm:px-8 py-2.5 sm:py-3 border border-gray-700 text-gray-300 font-semibold rounded-full hover:border-purple-400/50 hover:text-white transition-all duration-300 text-sm sm:text-base">
+              <button 
+                onClick={() => {
+                  const connectSection = document.getElementById('connect');
+                  if (connectSection) {
+                    connectSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="px-6 sm:px-8 py-2.5 sm:py-3 border border-gray-700 text-gray-300 font-semibold rounded-full hover:border-purple-400/50 hover:text-white hover:scale-105 transition-all duration-300 text-sm sm:text-base cursor-pointer"
+              >
                 Get In Touch
               </button>
             </div>
