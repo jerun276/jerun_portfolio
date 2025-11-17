@@ -389,7 +389,7 @@ export default function CurrentFrontierSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {frontierData.currentTech.map((tech, index) => {
                   // Fixed progress values to prevent glitching
-                  const progressValues = [85, 92, 78, 88, 95, 82, 90, 87, 93, 80, 89, 91, 84, 86, 94];
+                  const progressValues = [85, 80, 90, 80, 80, 90, 80, 70, 80, 80, 85, 90, 84, 86, 94];
                   const progress = progressValues[index % progressValues.length];
                   
                   // Tech icons mapping

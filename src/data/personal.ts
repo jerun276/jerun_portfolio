@@ -37,19 +37,19 @@ export const techStack = {
   
   // Categorized skills
   frontend: [
-    "React.js", "React Native", "Flutter", "Next.js", "TypeScript", "JavaScript",
-    "HTML5", "CSS3", "Tailwind CSS", "SASS", "Styled Components",
+    "React.js", "React Native", "Flutter", "Next.js", "JavaScript",
+    "Angular", "Laravel", "Tailwind CSS", "SASS", "Styled Components",
     "GSAP", "Framer Motion", "Three.js"
   ],
   
   backend: [
-    "Node.js", "Express.js", "SQLite", "Python", "Django", "FastAPI",
-    "PostgreSQL", "MongoDB", "Redis", "GraphQL", "REST APIs"
+    "Java", "C#", "Node.js", "Express.js", "SQLite", "Python", "Django", "FastAPI",
+    "Supabase", "MongoDB", "SQL Server", "REST APIs"
   ],
   
   tools: [
-    "Git", "Docker", "AWS", "Vercel", "Netlify", "Firebase",
-    "Figma", "Adobe Creative Suite", "VS Code", "Postman", "Flutter SDK", "Android Studio"
+    "Git", "Docker", "AWS", "Netlify", "Firebase",
+    "Figma", "VS Code", "Postman", "Flutter SDK", "Android Studio"
   ],
   
   concepts: [

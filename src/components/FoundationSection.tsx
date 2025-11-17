@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { education, techStack, sectionContent } from '@/data';
+import { education, sectionContent } from '@/data';
+import { techStack } from '@/data/personal';
 import Tilt from 'react-parallax-tilt';
 
 // Register ScrollTrigger plugin
@@ -15,6 +16,7 @@ export default function FoundationSection() {
   const headerRef = useRef<HTMLDivElement>(null);
   const educationCardRef = useRef<HTMLDivElement>(null);
   const techCardRef = useRef<HTMLDivElement>(null);
+  const toolsCardRef = useRef<HTMLDivElement>(null);
   const projectsCardRef = useRef<HTMLDivElement>(null);
   const foundationData = sectionContent.foundation;
   const myEducation = education[0]; // Get first education entry
@@ -23,7 +25,7 @@ export default function FoundationSection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Set initial states
-      gsap.set([headerRef.current, educationCardRef.current, techCardRef.current, projectsCardRef.current], {
+      gsap.set([headerRef.current, educationCardRef.current, techCardRef.current, toolsCardRef.current, projectsCardRef.current], {
         opacity: 0,
         y: 60
       });
@@ -70,6 +72,20 @@ export default function FoundationSection() {
         }
       });
 
+      // Tools card animation
+      gsap.to(toolsCardRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: toolsCardRef.current,
+          start: "top 85%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
       // Projects card animation
       gsap.to(projectsCardRef.current, {
         opacity: 1,
@@ -97,6 +113,27 @@ export default function FoundationSection() {
             ease: "back.out(1.7)",
             scrollTrigger: {
               trigger: techCardRef.current,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      }
+
+      // Animate tools items individually
+      if (toolsCardRef.current) {
+        const toolItems = toolsCardRef.current.querySelectorAll('.tech-item');
+        gsap.fromTo(toolItems, 
+          { opacity: 0, scale: 0.8 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            stagger: 0.1,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: toolsCardRef.current,
               start: "top 80%",
               end: "bottom 20%",
               toggleActions: "play none none reverse"
@@ -237,33 +274,57 @@ export default function FoundationSection() {
             </Tilt>
             </div>
 
-            {/* Academic Projects */}
-            <div ref={projectsCardRef}>
-            {myEducation.projects && (
+            {/* Tools & Development Environment */}
+            <div ref={toolsCardRef}>
               <Tilt
-                tiltMaxAngleX={8}
-                tiltMaxAngleY={8}
+                tiltMaxAngleX={10}
+                tiltMaxAngleY={10}
                 scale={1.01}
-                transitionSpeed={600}
+                transitionSpeed={800}
                 glareEnable={true}
-                glareMaxOpacity={0.1}
+                glareMaxOpacity={0.15}
               >
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/50 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-white mb-6">Academic Projects</h3>
-                <div className="space-y-3">
-                  {myEducation.projects.map((project, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
-                      <span className="text-gray-300">{project}</span>
-                    </div>
-                  ))}
-                </div>
+                  <h3 className="text-2xl font-bold text-white mb-6">Tools & Development Environment</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {techStack.tools.map((tool, index) => (
+                      <div key={index} className="tech-item flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <span className="text-gray-300">{tool}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </Tilt>
-            )}
             </div>
 
           </div>
+        </div>
+
+        {/* Academic Projects - Full Width */}
+        <div ref={projectsCardRef} className="mt-12">
+        {myEducation.projects && (
+          <Tilt
+            tiltMaxAngleX={8}
+            tiltMaxAngleY={8}
+            scale={1.01}
+            transitionSpeed={600}
+            glareEnable={true}
+            glareMaxOpacity={0.1}
+          >
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/50 transition-all duration-300">
+            <h3 className="text-2xl font-bold text-white mb-6">Academic Projects</h3>
+            <div className="space-y-3">
+              {myEducation.projects.map((project, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
+                  <span className="text-gray-300">{project}</span>
+                </div>
+              ))}
+            </div>
+            </div>
+          </Tilt>
+        )}
         </div>
       </div>
     </section>

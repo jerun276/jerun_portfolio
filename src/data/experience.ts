@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
     skills: ["Software Development", "Mobile App Development", "Team Collaboration", "Problem Solving"],
     website: "https://unicom.lk"
   },
-  
+
   {
     id: "aiesec-member",
     title: "Member",
@@ -54,8 +54,8 @@ export const experiences: Experience[] = [
     technologies: ["Project Management Tools", "Communication Platforms", "Digital Marketing"],
     skills: ["Leadership", "Cross-Cultural Communication", "Project Management", "Community Service"]
   },
-  
-  
+
+
 ];
 
 // Education Data
@@ -75,7 +75,7 @@ export interface Education {
 
 export const education: Education[] = [
   {
-    id: "sliit-btech",
+    id: "sliit-Bsc",
     degree: "Bachelor's Degree",
     field: "Computer Software Engineering",
     institution: "Sri Lanka Institute of Information Technology (SLIIT)",
@@ -83,20 +83,21 @@ export const education: Education[] = [
     startDate: "2024-07",
     endDate: "2028-07",
     achievements: [
+      "CGPA: 3.8/4.0",
       "Currently pursuing degree in Computer Software Engineering",
-      "Active participant in university tech communities",
-      "Member of AIESEC in SLIIT chapter",
+      "Dean list holder for the first 2 semesters",
       "Published research on AI-powered smart homes with Tesla coil wireless energy"
     ],
     relevantCourses: [
       "Software Engineering Principles",
-      "Data Structures & Algorithms",
       "Mobile Application Development",
       "Web Development Technologies",
       "Database Management Systems",
       "Artificial Intelligence & Machine Learning",
       "Computer Networks",
-      "Human-Computer Interaction"
+      "Probability & Statistics",
+      "Data Structures & Algorithms",
+      "Software Engineering Principles"
     ],
     projects: [
       "AI-powered Smart Home System",

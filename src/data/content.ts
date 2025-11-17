@@ -53,14 +53,14 @@ export const sectionContent = {
         title: "AIESEC Member",
         company: "AIESEC in SLIIT",
         period: "February 2025 - Present",
-        description: "Active member of the world's largest youth-led organization, participating in leadership development programs and community impact projects.",
+        description: "Active member of the world's largest youth-led organization, participating in leadership programs and community impact projects.",
         skills: ["Leadership", "Cross-Cultural Communication", "Project Management", "Community Service"],
         impact: "Leadership development & networking"
       },
       {
         title: "AI Research Publication",
         company: "SLIIT Northern Uni",
-        period: "2024",
+        period: "2025",
         description: "Published research on AI-powered smart homes with Tesla coil wireless energy systems, contributing to innovative solutions in smart home technology.",
         skills: ["AI Integration", "Smart Home Technologies", "Wireless Energy Systems", "Research & Development"],
         impact: "Published research contribution"
@@ -118,21 +118,30 @@ export const sectionContent = {
         image: "/projects/accurity.jpg",
         githubUrl: "https://github.com/jerun276/Accurity",
         liveUrl: "#"
+      },
+      {
+        name: "AI Vetnary Diagnosis",
+        tech: "Flutter, Cross-platform, AI, ML, Image Processing",
+        impact: "Applied AI and ML in mobile application.",
+        description: "AI Vetnary Diagnosis is a Flutter-based mobile application designed for veterinary diagnosis and management. It's a cross-platform application built for Android, iOS.",
+        image: "/projects/ai-vetnary.jpg",
+        githubUrl: "https://github.com/jerun276/Accurity",
+        liveUrl: "#"
       }
     ],
 
     achievements: [
       "Published AI research on smart home technologies with wireless energy systems",
+      "Deanlist for the first 2 semesters",
       "Developed cross-platform mobile applications serving real users",
       "Contributing to enterprise-level projects at Unicom",
-      "Active leadership role in AIESEC community programs",
-      "Mastered multiple programming languages and frameworks",
-      "Established strong foundation in AI/ML and IoT technologies"
+      "Active member role in AIESEC community programs",
+      "Mastered multiple programming languages and frameworks"
     ],
 
     advancedSkills: [
       "Mobile App Development", "AI Integration", "Cross-Platform Development", "IoT Systems",
-      "Wireless Energy Technology", "Community Leadership", "Research & Development", "Problem Solving"
+      "Community Leadership", "Research & Development", "Problem Solving", "Machine Learning"
     ]
   },
 
@@ -144,7 +153,7 @@ export const sectionContent = {
     currentRole: {
       title: "TIC Developer & Undergraduate Student",
       company: "Unicom & SLIIT",
-      period: "2024 - Present",
+      period: "2025/04 - Present",
       description: "Developing innovative technology solutions at Unicom while pursuing Computer Software Engineering degree at SLIIT. Active in research, community leadership, and cutting-edge mobile development projects.",
 
       keyProjects: [
@@ -155,22 +164,22 @@ export const sectionContent = {
       ],
 
       impact: [
-        "Published research on AI-powered smart homes with Tesla coil wireless energy",
+        "Been on the Deanlist for the first 2 semesters",
         "Contributing to enterprise-level software development at Unicom",
-        "Active leadership role in AIESEC community programs",
-        "Developing expertise in mobile and cross-platform development"
+        "Successfully deployed ICEDT Mobile application",
+        "Developing strong backend in dotnet framework"
       ]
     },
 
     currentTech: [
-      "Flutter", "React.js", "React Native", "Node.js", "Express.js",
+      "Flutter", "React.js", "React Native", "Node.js", "Express.js", "Java",
       "SQLite", "TypeScript", "JavaScript", "Python", "AI/ML",
-      "Smart Home Tech", "Wireless Energy Systems", "Mobile Development"
+      "IOT", "Mobile Development"
     ],
 
     focus: [
       "Mobile App Development", "AI Integration", "Smart Home Technologies",
-      "Cross-Platform Development", "Wireless Energy Systems", "Community Leadership"
+      "Cross-Platform Development", "Community Leadership", "IOT"
     ]
   },
 
