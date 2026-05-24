@@ -42,12 +42,20 @@ export const sectionContent = {
 
     experiences: [
       {
+        title: "Senior Software Engineer",
+        company: "Inspire (Startup)",
+        period: "Jan 2026 - Present",
+        description: "Driving the technical direction of the startup, ensuring successful delivery of scalable and high-quality software solutions. Working closely with the development team to transform ideas into production-ready systems.",
+        skills: ["AWS", "CI/CD", "GitHub Actions", "System Design", "Cloud Architecture", "Team Leadership"],
+        impact: "Leading technical roadmap & mentoring dev team"
+      },
+      {
         title: "TIC Developer",
         company: "Unicom",
-        period: "April 2025 - Present",
-        description: "Developing innovative technology solutions and contributing to cutting-edge projects in telecommunications and information technology sector.",
+        period: "April 2025 - December 2025",
+        description: "Developed innovative technology solutions and contributed to cutting-edge projects in telecommunications and information technology sector.",
         skills: ["Flutter", "React.js", "Node.js", "Express.js", "SQLite", "Mobile Development"],
-        impact: "Contributing to enterprise-level projects"
+        impact: "Contributed to enterprise-level projects"
       },
       {
         title: "AIESEC Member",
@@ -56,14 +64,6 @@ export const sectionContent = {
         description: "Active member of the world's largest youth-led organization, participating in leadership programs and community impact projects.",
         skills: ["Leadership", "Cross-Cultural Communication", "Project Management", "Community Service"],
         impact: "Leadership development & networking"
-      },
-      {
-        title: "AI Research Publication",
-        company: "SLIIT Northern Uni",
-        period: "2025",
-        description: "Published research on AI-powered smart homes with Tesla coil wireless energy systems, contributing to innovative solutions in smart home technology.",
-        skills: ["AI Integration", "Smart Home Technologies", "Wireless Energy Systems", "Research & Development"],
-        impact: "Published research contribution"
       }
     ]
   },
@@ -134,7 +134,7 @@ export const sectionContent = {
       "Published AI research on smart home technologies with wireless energy systems",
       "Deanlist for the first 2 semesters",
       "Developed cross-platform mobile applications serving real users",
-      "Contributing to enterprise-level projects at Unicom",
+      "Leading technical direction and mentoring dev team at Inspire startup",
       "Active member role in AIESEC community programs",
       "Mastered multiple programming languages and frameworks"
     ],
@@ -148,38 +148,38 @@ export const sectionContent = {
   currentFrontier: {
     title: "Current Frontier",
     subtitle: "Building the future with AI and mobile innovation",
-    description: "Currently pursuing my Bachelor's degree while gaining hands-on experience in software development, AI research, and community leadership. Focused on mobile development, AI integration, and smart technology solutions.",
+    description: "Currently leading technical direction at a startup while pursuing my Bachelor's degree. Focused on scalable software solutions, cloud architecture, and team mentoring alongside mobile development and AI integration.",
 
     currentRole: {
-      title: "TIC Developer & Undergraduate Student",
-      company: "Unicom & SLIIT",
-      period: "2025/04 - Present",
-      description: "Developing innovative technology solutions at Unicom while pursuing Computer Software Engineering degree at SLIIT. Active in research, community leadership, and cutting-edge mobile development projects.",
+      title: "Senior Software Engineer & Undergraduate Student",
+      company: "Inspire (Startup) & SLIIT",
+      period: "Jan 2026 - Present",
+      description: "Driving the technical direction of a startup, ensuring successful delivery of scalable software solutions. Leading end-to-end development from system design to deployment while pursuing Computer Software Engineering degree at SLIIT.",
 
       keyProjects: [
-        "AI-powered smart home systems with wireless energy transfer",
+        "Cloud-based deployments using AWS (EC2, S3)",
+        "CI/CD pipelines with GitHub Actions",
         "Cross-platform mobile applications using Flutter",
-        "React Native e-commerce solutions",
-        "Node.js backend systems with Express.js and SQLite"
+        "Scalable backend systems and architecture"
       ],
 
       impact: [
-        "Been on the Deanlist for the first 2 semesters",
-        "Contributing to enterprise-level software development at Unicom",
-        "Successfully deployed ICEDT Mobile application",
-        "Developing strong backend in dotnet framework"
+        "Defined and executed technical roadmap for startup products",
+        "Mentored development team, improving code quality and delivery efficiency",
+        "Been on the Deanlist for the first 2 semesters at SLIIT",
+        "Introduced best practices in software architecture and version control"
       ]
     },
 
     currentTech: [
       "Flutter", "React.js", "React Native", "Node.js", "Express.js", "Java",
-      "SQLite", "TypeScript", "JavaScript", "Python", "AI/ML",
-      "IOT", "Mobile Development"
+      "AWS", "TypeScript", "JavaScript", "Python", "AI/ML",
+      "GitHub Actions", "CI/CD"
     ],
 
     focus: [
-      "Mobile App Development", "AI Integration", "Smart Home Technologies",
-      "Cross-Platform Development", "Community Leadership", "IOT"
+      "Cloud Architecture", "Technical Leadership", "Mobile App Development",
+      "AI Integration", "System Design", "DevOps"
     ]
   },
 

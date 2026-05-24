@@ -9,12 +9,12 @@ export const personalInfo = {
   
   // Status
   availability: {
-    status: "Undergraduate Student - Available for Internships",
+    status: "Senior Software Engineer at Inspire | Undergraduate at SLIIT",
     isAvailable: true
   },
 
   // Bio
-  bio: "Passionate software engineer pursuing Bachelor's degree in Computer Software Engineering at SLIIT (2024-2028). Experienced in Flutter, React.js, React Native, Node.js, and Express.js. Published AI researcher with expertise in smart home technologies and wireless energy systems. Active AIESEC member and TIC Developer at Unicom.",
+  bio: "Senior Software Engineer at Inspire (Startup), driving technical direction and delivering scalable software solutions. Pursuing Bachelor's degree in Computer Software Engineering at SLIIT (2024-2028). Experienced in AWS, Flutter, React.js, Node.js, and CI/CD pipelines. Published AI researcher with expertise in smart home technologies and wireless energy systems.",
   
   // Social Links
   social: {

@@ -17,19 +17,41 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "inspire-senior-software-engineer",
+    title: "Senior Software Engineer",
+    company: "Inspire (Startup)",
+    location: "Jaffna, Sri Lanka",
+    type: "work",
+    startDate: "2026-01",
+    current: true,
+    description: "As a Senior Software Engineer, I am responsible for driving the technical direction of the startup and ensuring the successful delivery of scalable and high-quality software solutions. I work closely with the development team to transform ideas into production-ready systems.",
+    achievements: [
+      "Defined and executed the technical roadmap for startup products, ensuring scalability, performance, and maintainability",
+      "Led end-to-end development of software solutions, from system design to deployment, aligning with business requirements",
+      "Designed and managed cloud-based deployments using AWS (EC2, S3) to ensure high availability and reliability",
+      "Implemented CI/CD pipelines using GitHub Actions, automating build, testing, and deployment workflows",
+      "Mentored and guided a development team, improving code quality, collaboration, and delivery efficiency",
+      "Introduced best practices in software architecture, version control, and development workflows"
+    ],
+    technologies: ["AWS", "EC2", "S3", "GitHub Actions", "CI/CD", "Cloud Deployment"],
+    skills: ["Technical Leadership", "System Design", "Cloud Architecture", "Team Mentoring", "Software Architecture"]
+  },
+
+  {
     id: "unicom-tic-developer",
     title: "TIC Developer",
     company: "Unicom",
     location: "Jaffna, Northern Province, Sri Lanka",
     type: "work",
     startDate: "2025-04",
-    current: true,
-    description: "Developing innovative technology solutions and contributing to cutting-edge projects in telecommunications and information technology sector.",
+    endDate: "2025-12",
+    current: false,
+    description: "Developed innovative technology solutions and contributed to cutting-edge projects in telecommunications and information technology sector.",
     achievements: [
-      "Contributing to enterprise-level software development projects",
-      "Implementing modern development practices and methodologies",
-      "Collaborating with cross-functional teams on technology initiatives",
-      "Gaining hands-on experience in professional software development"
+      "Contributed to enterprise-level software development projects",
+      "Implemented modern development practices and methodologies",
+      "Collaborated with cross-functional teams on technology initiatives",
+      "Gained hands-on experience in professional software development"
     ],
     technologies: ["Flutter", "React.js", "Node.js", "Express.js", "SQLite", "Mobile Development"],
     skills: ["Software Development", "Mobile App Development", "Team Collaboration", "Problem Solving"],

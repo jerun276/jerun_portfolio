@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { sectionContent } from '@/data';
 import Tilt from 'react-parallax-tilt';
+import { PixelCanvas } from '@/components/ui/pixel-logo-grid';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -253,26 +254,35 @@ export default function EarlyDiscoveriesSection() {
         <div ref={keyInsightsRef} className="text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">Key Insights</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="insight-item bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-              <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <span className="text-white font-bold text-lg">1</span>
+            <div className="insight-item group relative overflow-hidden bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
+              <PixelCanvas colors={["#c084fc", "#e879f9", "#a855f7"]} gap={6} speed={25} />
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white font-bold text-lg">1</span>
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-2">Real-World Application</h4>
+                <p className="text-gray-300 text-sm">Bridging the gap between academic knowledge and practical implementation in professional environments.</p>
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Real-World Application</h4>
-              <p className="text-gray-300 text-sm">Bridging the gap between academic knowledge and practical implementation in professional environments.</p>
             </div>
-            <div className="insight-item bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-              <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <span className="text-white font-bold text-lg">2</span>
+            <div className="insight-item group relative overflow-hidden bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
+              <PixelCanvas colors={["#22d3ee", "#06b6d4", "#67e8f9"]} gap={6} speed={25} />
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white font-bold text-lg">2</span>
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-2">Collaborative Development</h4>
+                <p className="text-gray-300 text-sm">Learning to work effectively in teams, communicate with stakeholders, and contribute to larger codebases.</p>
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Collaborative Development</h4>
-              <p className="text-gray-300 text-sm">Learning to work effectively in teams, communicate with stakeholders, and contribute to larger codebases.</p>
             </div>
-            <div className="insight-item bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-              <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                <span className="text-white font-bold text-lg">3</span>
+            <div className="insight-item group relative overflow-hidden bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
+              <PixelCanvas colors={["#fb923c", "#f97316", "#fdba74"]} gap={6} speed={25} />
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white font-bold text-lg">3</span>
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-2">Continuous Learning</h4>
+                <p className="text-gray-300 text-sm">Embracing new technologies and methodologies while building a foundation for lifelong learning in tech.</p>
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Continuous Learning</h4>
-              <p className="text-gray-300 text-sm">Embracing new technologies and methodologies while building a foundation for lifelong learning in tech.</p>
             </div>
           </div>
         </div>
