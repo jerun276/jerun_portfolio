@@ -141,7 +141,7 @@ export default function HeroSection() {
           {/* Profile Photo - First on mobile */}
           <div className="flex justify-center order-1 lg:order-1">
             <div ref={profileRef} className="relative">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 p-1 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">
+              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 p-1 bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400">
                 <img 
                   src="/jerun_prifile.png" 
                   alt="Jerun Kingston"
@@ -163,7 +163,7 @@ export default function HeroSection() {
             <div ref={textRef} className="mb-6 lg:mb-8">
               <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-1 sm:gap-4 mb-4 sm:mb-6">
                 <span className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">I'm</span>
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight min-h-[1.2em] sm:min-h-[1.5em] flex items-baseline">
+                <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight min-h-[1.2em] sm:min-h-[1.5em] flex items-baseline">
                   {displayedText}
                   <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
                 </span>
@@ -201,7 +201,7 @@ export default function HeroSection() {
                     ascentSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 text-sm sm:text-base cursor-pointer"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-linear-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 text-sm sm:text-base cursor-pointer"
               >
                 View My Work
               </button>

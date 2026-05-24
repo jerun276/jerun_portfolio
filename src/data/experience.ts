@@ -83,7 +83,7 @@ export const education: Education[] = [
     startDate: "2024-07",
     endDate: "2028-07",
     achievements: [
-      "CGPA: 3.8/4.0",
+      "CGPA: 3.64/4.0",
       "Currently pursuing degree in Computer Software Engineering",
       "Dean list holder for the first 2 semesters",
       "Published research on AI-powered smart homes with Tesla coil wireless energy"
@@ -100,6 +100,7 @@ export const education: Education[] = [
       "Software Engineering Principles"
     ],
     projects: [
+      "Gov-Connect - A Government Service Portal",
       "AI-powered Smart Home System",
       "Spark Movie Ticket Booking System",
       "School Management System"

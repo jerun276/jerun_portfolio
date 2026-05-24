@@ -200,18 +200,18 @@ export default function ConnectSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen bg-gradient-to-b from-black via-gray-900/30 to-black flex items-center justify-center px-5 md:px-20 py-20 overflow-hidden"
+      className="relative min-h-screen bg-linear-to-b from-black via-gray-900/30 to-black flex items-center justify-center px-5 md:px-20 py-20 overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div ref={backgroundOrbsRef} className="absolute inset-0">
         <div
-          className="floating-orb absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
+          className="floating-orb absolute top-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
         ></div>
         <div
-          className="floating-orb absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"
+          className="floating-orb absolute bottom-1/4 right-1/4 w-80 h-80 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"
         ></div>
         <div
-          className="floating-orb absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-full blur-3xl"
+          className="floating-orb absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-linear-to-r from-green-500/10 to-teal-500/10 rounded-full blur-3xl"
         ></div>
       </div>
 
@@ -220,7 +220,7 @@ export default function ConnectSection() {
         {/* Section Header */}
         <div ref={headerRef} className="mb-16">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            {connectData.title.split(' ')[0]} <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">{connectData.title.split(' ')[1]}</span>
+            {connectData.title.split(' ')[0]} <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">{connectData.title.split(' ')[1]}</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
             {connectData.description}
@@ -256,9 +256,9 @@ export default function ConnectSection() {
                   
                   {/* Icon */}
                   <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 ${
-                    method.type === 'email' ? 'bg-gradient-to-r from-purple-400 to-pink-400' :
-                    method.type === 'phone' ? 'bg-gradient-to-r from-green-400 to-teal-400' :
-                    'bg-gradient-to-r from-cyan-400 to-blue-400'
+                    method.type === 'email' ? 'bg-linear-to-r from-purple-400 to-pink-400' :
+                    method.type === 'phone' ? 'bg-linear-to-r from-green-400 to-teal-400' :
+                    'bg-linear-to-r from-cyan-400 to-blue-400'
                   } ${hoveredContact === index ? 'scale-110 rotate-12' : 'group-hover:scale-105'}`}>
                     {method.type === 'email' ? (
                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -288,7 +288,7 @@ export default function ConnectSection() {
 
                   {/* Hover Effect */}
                   {hoveredContact === index && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-2xl pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-purple-500/5 to-pink-500/5 rounded-2xl pointer-events-none"></div>
                   )}
                 </div>
               </a>
@@ -308,10 +308,10 @@ export default function ConnectSection() {
           >
             <a
               href={personalInfo.social.email}
-              className="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-bold text-lg px-12 py-4 rounded-2xl hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 group relative overflow-hidden"
+              className="inline-block bg-linear-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-bold text-lg px-12 py-4 rounded-2xl hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 group relative overflow-hidden"
             >
               <span className="relative z-10">Start a Conversation</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-purple-600 via-pink-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Animated sparkles */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -330,7 +330,7 @@ export default function ConnectSection() {
             { name: 'LinkedIn', url: personalInfo.social.linkedin },
             { name: 'Facebook', url: personalInfo.social.facebook },
             { name: 'Instagram', url: personalInfo.social.instagram }
-          ].map((social, index) => (
+          ].map((social) => (
             <Tilt
               key={social.name}
               tiltMaxAngleX={15}
@@ -371,7 +371,7 @@ export default function ConnectSection() {
 
         {/* Footer */}
         <div ref={footerRef} className="text-center">
-          <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
+          <div className="h-px bg-linear-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
           <p className="text-gray-500 text-sm">
             {connectData.footer}
           </p>

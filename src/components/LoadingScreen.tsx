@@ -111,7 +111,7 @@ export default function LoadingScreen({ onLoadComplete, progress }: LoadingScree
       {/* Subtle radial glow behind the ECG */}
       <div
         ref={glowRef}
-        className="absolute w-[600px] h-[200px] bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-cyan-500/10 rounded-full blur-3xl opacity-30"
+        className="absolute w-[600px] h-[200px] bg-linear-to-r from-purple-500/10 via-pink-500/10 to-cyan-500/10 rounded-full blur-3xl opacity-30"
       />
 
       {/* Main content */}
@@ -145,7 +145,7 @@ export default function LoadingScreen({ onLoadComplete, progress }: LoadingScree
 
         {/* Title - reveals as line draws */}
         <div ref={textRef} className="text-center mb-2 opacity-0">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
             The Life Line
           </h1>
         </div>

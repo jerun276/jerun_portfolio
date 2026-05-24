@@ -59,9 +59,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <a href="#home" className="text-xl md:text-2xl font-bold">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                 {personalInfo.name.split(' ')[0]}
               </span>
             </a>
@@ -76,7 +76,7 @@ export default function Navbar() {
                 className="text-gray-300 hover:text-white transition-colors duration-300 relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
           <div className="hidden md:flex">
             <a
               href="#connect"
-              className="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-2 bg-linear-to-r from-purple-500 to-pink-500 text-white rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
             >
               Let's Talk
             </a>
@@ -135,7 +135,7 @@ export default function Navbar() {
               <a
                 href="#connect"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-semibold"
+                className="block w-full text-center px-6 py-3 bg-linear-to-r from-purple-500 to-pink-500 text-white rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-semibold"
               >
                 Let's Talk
               </a>

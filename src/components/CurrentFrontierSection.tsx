@@ -179,18 +179,18 @@ export default function CurrentFrontierSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden"
+      className="relative min-h-screen bg-linear-to-br from-gray-900 via-black to-gray-900 overflow-hidden"
     >
       {/* Floating Background Orbs */}
       <div ref={orbsRef} className="absolute inset-0 overflow-hidden">
-        <div className="floating-orb absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
-        <div className="floating-orb absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="floating-orb absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
+        <div className="floating-orb absolute top-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+        <div className="floating-orb absolute bottom-1/4 right-1/4 w-80 h-80 bg-linear-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="floating-orb absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-linear-to-r from-green-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
       </div>
 
       {/* Grid Pattern - parallax via ScrollTrigger */}
       <div className="absolute inset-0 opacity-10 grid-pattern">
-        <div className="w-full h-full bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div className="w-full h-full bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[50px_50px]"></div>
       </div>
 
       <div className="relative z-10 px-5 md:px-20 py-20">
@@ -199,7 +199,7 @@ export default function CurrentFrontierSection() {
         <div ref={headerRef} className="text-center mb-20">
           <div ref={headerInnerRef} style={{ perspective: 1000 }}>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Current <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Frontier</span>
+              Current <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Frontier</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {frontierData.description}
@@ -217,7 +217,7 @@ export default function CurrentFrontierSection() {
                   onClick={() => setActiveTab(index)}
                   className={`tab-button px-4 sm:px-6 py-3 rounded-xl transition-all duration-300 text-sm sm:text-base flex-1 ${
                     activeTab === index
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                      ? 'bg-linear-to-r from-purple-500 to-pink-500 text-white shadow-lg'
                       : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
                   }`}
                 >
@@ -258,7 +258,7 @@ export default function CurrentFrontierSection() {
                         <div className="space-y-3">
                           {frontierData.currentRole.keyProjects.map((project, index) => (
                             <div key={index} className="flex items-center gap-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-linear-to-r from-purple-400 to-pink-400 rounded-full"></div>
                               <span className="text-gray-300">{project}</span>
                             </div>
                           ))}
@@ -271,10 +271,10 @@ export default function CurrentFrontierSection() {
                       {frontierData.currentRole.impact.map((item, index) => (
                         <div
                           key={index}
-                          className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-400/20"
+                          className="bg-linear-to-r from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-400/20"
                         >
                           <div className="flex items-start gap-4">
-                            <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <div className="w-8 h-8 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shrink-0">
                               <span className="text-white font-bold text-sm">{index + 1}</span>
                             </div>
                             <p className="text-gray-300 leading-relaxed">{item}</p>
@@ -307,13 +307,13 @@ export default function CurrentFrontierSection() {
                       glareMaxOpacity={0.15}
                     >
                       <div className="content-card bg-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 text-center hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/20 transition-all duration-300 group">
-                        <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-16 h-16 bg-linear-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                           <span className="text-white font-bold text-lg">{tech.slice(0, 2).toUpperCase()}</span>
                         </div>
                         <h4 className="text-white font-semibold mb-3 group-hover:text-purple-300 transition-colors duration-300">{tech}</h4>
                         <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
                           <div
-                            className="bg-gradient-to-r from-purple-400 to-pink-400 h-2 rounded-full"
+                            className="bg-linear-to-r from-purple-400 to-pink-400 h-2 rounded-full"
                             style={{ width: `${progress}%` }}
                           ></div>
                         </div>
@@ -343,7 +343,7 @@ export default function CurrentFrontierSection() {
                     glareMaxOpacity={0.15}
                   >
                     <div className="content-card bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-64 flex flex-col justify-center items-center text-center hover:border-cyan-400/50 transition-all duration-300">
-                      <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center mb-6">
+                      <div className="w-20 h-20 bg-linear-to-r from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center mb-6">
                         <span className="text-white font-bold text-2xl">{index + 1}</span>
                       </div>
                       <h4 className="text-xl font-bold text-white mb-4">{focus}</h4>

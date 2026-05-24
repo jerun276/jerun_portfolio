@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { sectionContent } from '@/data';
@@ -235,7 +236,7 @@ export default function AscentSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen bg-gradient-to-b from-black via-gray-900/50 to-black overflow-hidden"
+      className="relative min-h-screen bg-linear-to-b from-black via-gray-900/50 to-black overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -249,7 +250,7 @@ export default function AscentSection() {
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            The <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Ascent</span>
+            The <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Ascent</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             {ascentData.description}
@@ -261,7 +262,7 @@ export default function AscentSection() {
           <div className="w-full max-w-4xl">
             <div className="relative h-2 bg-gray-800 rounded-full overflow-hidden">
               <div 
-                className="progress-bar absolute top-0 left-0 h-full bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400"
+                className="progress-bar absolute top-0 left-0 h-full bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400"
               ></div>
             </div>
             <div className="flex justify-between mt-4 text-sm text-gray-400">
@@ -298,14 +299,14 @@ export default function AscentSection() {
                   onClick={() => setActiveProject(index)}
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                  <div className="relative h-48 bg-linear-to-br from-purple-500/20 to-pink-500/20">
                     {project.image ? (
-                      <img 
-                        src={project.image} 
+                      <Image
+                        src={project.image}
                         alt={project.name}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                         onError={(e) => {
-                          // Fallback to gradient background if image fails to load
                           e.currentTarget.style.display = 'none';
                         }}
                       />
@@ -364,9 +365,9 @@ export default function AscentSection() {
                     </div>
 
                     {/* Impact Metric */}
-                    <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-3 border border-purple-400/30">
+                    <div className="bg-linear-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-3 border border-purple-400/30">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-linear-to-r from-purple-400 to-pink-400 rounded-full"></div>
                         <span className="text-white font-semibold text-sm">{project.impact}</span>
                       </div>
                     </div>
@@ -412,7 +413,7 @@ export default function AscentSection() {
                   className="achievement-item flex items-start gap-4 p-4 bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-gray-600 transition-all duration-300"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-8 h-8 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shrink-0 mt-1">
                     <span className="text-white font-bold text-sm">{index + 1}</span>
                   </div>
                   <p className="text-gray-300 leading-relaxed">{achievement}</p>

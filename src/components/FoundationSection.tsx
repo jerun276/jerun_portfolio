@@ -151,7 +151,7 @@ export default function FoundationSection() {
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            The <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Foundation</span>
+            The <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Foundation</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             {foundationData.description}
@@ -188,7 +188,7 @@ export default function FoundationSection() {
               <ul className="space-y-2">
                 {myEducation.achievements.map((achievement, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 shrink-0"></div>
                     <span className="text-gray-300">{achievement}</span>
                   </li>
                 ))}
@@ -298,7 +298,7 @@ export default function FoundationSection() {
             <div className="space-y-3">
               {myEducation.projects.map((project, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-linear-to-r from-purple-400 to-pink-400 rounded-full"></div>
                   <span className="text-gray-300">{project}</span>
                 </div>
               ))}

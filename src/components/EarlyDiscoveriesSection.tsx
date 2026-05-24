@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { experiences, sectionContent } from '@/data';
+import { sectionContent } from '@/data';
 import Tilt from 'react-parallax-tilt';
 
 // Register ScrollTrigger plugin
@@ -11,21 +11,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function EarlyDiscoveriesSection() {
   const [activeRole, setActiveRole] = useState(0);
-  const [backgroundGradient, setBackgroundGradient] = useState('from-purple-900/20 to-pink-900/20');
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const roleCardsRef = useRef<HTMLDivElement>(null);
   const keyInsightsRef = useRef<HTMLDivElement>(null);
-  
+
   const sectionData = sectionContent.earlyDiscoveries;
   const earlyRoles = sectionData.experiences; // Use experiences from content data
 
   // Background color shifts based on active role
   const gradients = [
     'from-purple-900/30 via-blue-900/20 to-cyan-900/30',
-    'from-pink-900/30 via-purple-900/20 to-indigo-900/30', 
+    'from-pink-900/30 via-purple-900/20 to-indigo-900/30',
     'from-cyan-900/30 via-teal-900/20 to-green-900/30'
   ];
+
+  const backgroundGradient = gradients[activeRole] || gradients[0];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,10 +35,6 @@ export default function EarlyDiscoveriesSection() {
 
     return () => clearInterval(interval);
   }, [earlyRoles.length]);
-
-  useEffect(() => {
-    setBackgroundGradient(gradients[activeRole]);
-  }, [activeRole]);
 
   // GSAP ScrollTrigger Animations
   useEffect(() => {
@@ -146,17 +143,17 @@ export default function EarlyDiscoveriesSection() {
 
 
   return (
-    <section ref={sectionRef} className={`relative min-h-screen flex items-center justify-center px-5 md:px-20 py-20 transition-all duration-1000 bg-gradient-to-br ${backgroundGradient}`}>
+    <section ref={sectionRef} className={`relative min-h-screen flex items-center justify-center px-5 md:px-20 py-20 transition-all duration-1000 bg-linear-to-br ${backgroundGradient}`}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,_white_1px,_transparent_1px)] bg-[length:50px_50px]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,white_1px,transparent_1px)] bg-size-[50px_50px]"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-20">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Early <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Discoveries</span>
+            Early <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">Discoveries</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             {sectionData.description}
@@ -200,7 +197,7 @@ export default function EarlyDiscoveriesSection() {
                 {/* Impact */}
                 <div className="mb-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-linear-to-r from-purple-400 to-pink-400 rounded-full mt-2 shrink-0"></div>
                     <p className="text-gray-300 text-sm font-medium">
                       {role.impact}
                     </p>
@@ -210,7 +207,7 @@ export default function EarlyDiscoveriesSection() {
                 {/* Skills */}
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex flex-wrap gap-2">
-                    {role.skills.slice(0, 3).map((skill: any, skillIndex: any) => (
+                    {role.skills.slice(0, 3).map((skill: string, skillIndex: number) => (
                       <span 
                         key={skillIndex}
                         className="px-2 py-1 bg-gray-800/80 border border-gray-600 rounded-md text-xs text-gray-300"
@@ -257,21 +254,21 @@ export default function EarlyDiscoveriesSection() {
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">Key Insights</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="insight-item bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <span className="text-white font-bold text-lg">1</span>
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Real-World Application</h4>
               <p className="text-gray-300 text-sm">Bridging the gap between academic knowledge and practical implementation in professional environments.</p>
             </div>
             <div className="insight-item bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <span className="text-white font-bold text-lg">2</span>
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Collaborative Development</h4>
               <p className="text-gray-300 text-sm">Learning to work effectively in teams, communicate with stakeholders, and contribute to larger codebases.</p>
             </div>
             <div className="insight-item bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
+              <div className="w-12 h-12 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <span className="text-white font-bold text-lg">3</span>
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">Continuous Learning</h4>
