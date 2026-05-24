@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from 'react';
 interface PreloadItem {
   type: 'image' | 'font' | 'script';
   url: string;
-  weight?: number; // For progress calculation
+  weight?: number;
 }
 
 interface PreloadManagerState {
@@ -38,31 +38,11 @@ export function usePreloadManager(items: PreloadItem[] = []) {
       link.type = 'font/woff2';
       link.crossOrigin = 'anonymous';
       link.href = url;
-      
+
       link.onload = () => resolve();
       link.onerror = () => reject(new Error(`Failed to load font: ${url}`));
-      
+
       document.head.appendChild(link);
-    });
-  }, []);
-
-  const preloadScript = useCallback((url: string): Promise<void> => {
-    return new Promise((resolve, reject) => {
-      // Check if script is already loaded
-      const existingScript = document.querySelector(`script[src="${url}"]`);
-      if (existingScript) {
-        resolve();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = url;
-      script.async = true;
-      
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
-      
-      document.head.appendChild(script);
     });
   }, []);
 
@@ -72,93 +52,63 @@ export function usePreloadManager(items: PreloadItem[] = []) {
         return preloadImage(item.url);
       case 'font':
         return preloadFont(item.url);
-      case 'script':
-        return preloadScript(item.url);
       default:
-        throw new Error(`Unknown preload type: ${item.type}`);
+        return Promise.resolve();
     }
-  }, [preloadImage, preloadFont, preloadScript]);
+  }, [preloadImage, preloadFont]);
 
   useEffect(() => {
     if (items.length === 0) {
-      // If no items to preload, simulate a quick loading process
       const timer = setTimeout(() => {
         setState({
           isLoading: false,
           progress: 100,
           isComplete: true
         });
-      }, 1500);
+      }, 1200);
 
       return () => clearTimeout(timer);
     }
 
     let isCancelled = false;
-    
+
     const loadResources = async () => {
+      const minDisplayTime = 3200; // Let ECG + text reveal complete
+      const startTime = Date.now();
       const totalWeight = items.reduce((sum, item) => sum + (item.weight || 1), 0);
       let loadedWeight = 0;
 
-      // Add essential resources that should always be preloaded
-      const essentialItems: PreloadItem[] = [
-        ...items,
-        // GSAP (if not already included)
-        { type: 'script', url: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js', weight: 2 },
-        // Google Fonts (Mona Sans is already in globals.css, but we can ensure it's loaded)
-      ];
-
-      // Filter out duplicates
-      const uniqueItems = essentialItems.filter((item, index, self) => 
-        index === self.findIndex(t => t.url === item.url)
-      );
-
-      const finalTotalWeight = uniqueItems.reduce((sum, item) => sum + (item.weight || 1), 0);
-
       try {
-        // Load items with progress tracking
-        for (const item of uniqueItems) {
+        for (const item of items) {
           if (isCancelled) break;
 
           try {
             await preloadItem(item);
-            loadedWeight += (item.weight || 1);
-            
-            const progress = Math.min(Math.round((loadedWeight / finalTotalWeight) * 100), 100);
-            
-            setState(prev => ({
-              ...prev,
-              progress
-            }));
-
-            // Small delay to make progress visible
-            await new Promise(resolve => setTimeout(resolve, 100));
           } catch (error) {
-            console.warn(`Failed to preload ${item.type}: ${item.url}`, error);
-            // Continue loading other items even if one fails
-            loadedWeight += (item.weight || 1);
+            console.warn(`Failed to preload ${item.type}: ${item.url}`);
+          }
+
+          loadedWeight += (item.weight || 1);
+          // Cap at 90% — only reach 100 after minDisplayTime
+          const progress = Math.min(Math.round((loadedWeight / totalWeight) * 90), 90);
+
+          if (!isCancelled) {
+            setState(prev => ({ ...prev, progress }));
           }
         }
 
+        // Wait for minimum display time so ECG + text animations finish
+        const elapsed = Date.now() - startTime;
+        if (elapsed < minDisplayTime) {
+          await new Promise(resolve => setTimeout(resolve, minDisplayTime - elapsed));
+        }
+
         if (!isCancelled) {
-          // Ensure we reach 100% and add a small delay for UX
-          setState(prev => ({ ...prev, progress: 100 }));
-          
-          await new Promise(resolve => setTimeout(resolve, 500));
-          
-          setState({
-            isLoading: false,
-            progress: 100,
-            isComplete: true
-          });
+          setState({ isLoading: false, progress: 100, isComplete: true });
         }
       } catch (error) {
-        console.error('Preloading failed:', error);
         if (!isCancelled) {
-          setState({
-            isLoading: false,
-            progress: 100,
-            isComplete: true
-          });
+          setState({ isLoading: false, progress: 100, isComplete: true });
         }
       }
     };
@@ -173,12 +123,8 @@ export function usePreloadManager(items: PreloadItem[] = []) {
   return state;
 }
 
-// Default preload items for the portfolio
 export const defaultPreloadItems: PreloadItem[] = [
-  // Add any specific images, fonts, or scripts your portfolio needs
-  // Example:
-  // { type: 'image', url: '/hero-background.jpg', weight: 3 },
-  // { type: 'image', url: '/profile-photo.jpg', weight: 2 },
+  { type: 'image', url: '/jerun_prifile.png', weight: 3 },
 ];
 
 export default usePreloadManager;

@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function EarlyDiscoveriesSection() {
   const [activeRole, setActiveRole] = useState(0);
   const [backgroundGradient, setBackgroundGradient] = useState('from-purple-900/20 to-pink-900/20');
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const roleCardsRef = useRef<HTMLDivElement>(null);
@@ -145,23 +144,6 @@ export default function EarlyDiscoveriesSection() {
     return () => ctx.revert();
   }, []);
 
-  // Scroll visibility detection
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const inView = rect.top < windowHeight && rect.bottom > 0;
-      setIsVisible(inView);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <section ref={sectionRef} className={`relative min-h-screen flex items-center justify-center px-5 md:px-20 py-20 transition-all duration-1000 bg-gradient-to-br ${backgroundGradient}`}>

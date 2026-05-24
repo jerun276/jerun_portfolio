@@ -10,8 +10,6 @@ import Tilt from 'react-parallax-tilt';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ConnectSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredContact, setHoveredContact] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -20,26 +18,8 @@ export default function ConnectSection() {
   const socialLinksRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const backgroundOrbsRef = useRef<HTMLDivElement>(null);
-  
+
   const connectData = sectionContent.connect;
-
-  // Visibility detection
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const inView = rect.top < windowHeight && rect.bottom > 0;
-      setIsVisible(inView);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // GSAP ScrollTrigger Animations
   useEffect(() => {
@@ -217,29 +197,6 @@ export default function ConnectSection() {
     return () => ctx.revert();
   }, []);
 
-  // Mouse tracking for micro-interactions
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!sectionRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      setMousePosition({
-        x: ((e.clientX - rect.left) / rect.width) * 2 - 1,
-        y: ((e.clientY - rect.top) / rect.height) * 2 - 1
-      });
-    };
-
-    const section = sectionRef.current;
-    if (section) {
-      section.addEventListener('mousemove', handleMouseMove);
-      return () => section.removeEventListener('mousemove', handleMouseMove);
-    }
-  }, []);
-
-  const getFloatingStyle = (intensity: number = 1) => ({
-    transform: `translateX(${mousePosition.x * 10 * intensity}px) translateY(${mousePosition.y * 10 * intensity}px)`,
-  });
-
   return (
     <section 
       ref={sectionRef}
@@ -247,17 +204,14 @@ export default function ConnectSection() {
     >
       {/* Animated Background Elements */}
       <div ref={backgroundOrbsRef} className="absolute inset-0">
-        <div 
+        <div
           className="floating-orb absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
-          style={getFloatingStyle(0.3)}
         ></div>
-        <div 
+        <div
           className="floating-orb absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"
-          style={getFloatingStyle(-0.4)}
         ></div>
-        <div 
+        <div
           className="floating-orb absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-full blur-3xl"
-          style={getFloatingStyle(0.2)}
         ></div>
       </div>
 

@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AscentSection() {
   const [activeProject, setActiveProject] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);

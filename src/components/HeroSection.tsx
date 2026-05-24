@@ -9,7 +9,6 @@ export default function HeroSection() {
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
   const [showCursor, setShowCursor] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -133,23 +132,6 @@ export default function HeroSection() {
     };
   }, []);
 
-  // Scroll visibility detection
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const inView = rect.top < windowHeight && rect.bottom > 0;
-      setIsVisible(inView);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   return (
     <section ref={sectionRef} className="relative z-0 min-h-screen flex items-center justify-center mb-8 pt-1 md:pt-1">
       <div className="px-5 md:px-20 w-full">
