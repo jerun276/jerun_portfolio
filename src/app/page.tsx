@@ -9,24 +9,28 @@ import AscentSection from '@/components/AscentSection';
 import CurrentFrontierSection from '@/components/CurrentFrontierSection';
 import ConnectSection from '@/components/ConnectSection';
 import LoadingScreen from '@/components/LoadingScreen';
-import { usePreloadManager, defaultPreloadItems } from '@/hooks/usePreloadManager';
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
-  const { isLoading, progress } = usePreloadManager(defaultPreloadItems);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Manage body class for loading state
   useEffect(() => {
     if (isLoading) {
       document.body.classList.add('loading');
     } else {
       document.body.classList.remove('loading');
     }
-
     return () => {
       document.body.classList.remove('loading');
     };
   }, [isLoading]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleLoadComplete = () => {
     setShowContent(true);
@@ -34,19 +38,16 @@ export default function Home() {
 
   if (isLoading || !showContent) {
     return (
-      <LoadingScreen 
+      <LoadingScreen
         onLoadComplete={handleLoadComplete}
-        progress={progress}
+        progress={isLoading ? 80 : 100}
       />
     );
   }
 
   return (
     <div className="relative content-reveal">
-      {/* Fixed Navbar */}
       <Navbar />
-      
-      {/* Main Content Sections */}
       <main>
         <div id="home">
           <HeroSection />
