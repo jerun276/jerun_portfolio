@@ -81,6 +81,7 @@ export const sectionContent = {
         description: "ICEDT is a cross-platform mobile application built using React Native and Native-wind. It is a learning app that provides users with a platform to learn and practice coding.",
         image: "/projects/icedt.jpg",
         githubUrl: "https://github.com/jerun276/icedt_mobile",
+        linkedinUrl: "https://www.linkedin.com/posts/jerun-kingston-4538592bb_reactnative-expo-typescript-activity-7400383011877486592-6UjJ",
         liveUrl: "#"
       },
       {
@@ -90,6 +91,7 @@ export const sectionContent = {
         description: "Revolutionary smart home system integrating AI for seamless automation and energy efficiency. Published research contribution.",
         image: "/projects/smart-home-ai.jpg",
         githubUrl: "https://github.com/jerun276/Smart_Home_Automation-IOT",
+        linkedinUrl: "https://www.linkedin.com/posts/jerun-kingston-4538592bb_smarthome-iot-arduino-activity-7251497140789600256-Us9D",
         liveUrl: "#"
       },
       {
@@ -99,6 +101,7 @@ export const sectionContent = {
         description: "SparkMovie is a dynamic web application that brings together key concepts of object-oriented programming, data structures, and web development. This project is designed to simulate a real-world movie ticket booking platform with no database instead, it relies on file-based data management using simple text files to store and retrieve data.",
         image: "/projects/spark-movie.jpg",
         githubUrl: "https://github.com/IT24103667/MovieTicketBooking",
+        linkedinUrl: "https://www.linkedin.com/posts/jerun-kingston-4538592bb_sparkmovie-java-javawebapp-activity-7326036495591493632-z6CO",
         liveUrl: "#"
       },
       {
@@ -108,6 +111,7 @@ export const sectionContent = {
         description: "School Management System is a web application that brings together key concepts of object-oriented programming, data structures, and web development. This project is designed to simulate a real-world school management system with MySQL database.",
         image: "/projects/school-management.jpg",
         githubUrl: "https://github.com/jerun276/student-management-system",
+        linkedinUrl: "https://www.linkedin.com/posts/jerun-kingston-4538592bb_softwareengineering-agilescrum-sliit-activity-7400745412699054080-FCZP",
         liveUrl: "#"
       },
       {
@@ -126,6 +130,7 @@ export const sectionContent = {
         description: "AI Vetnary Diagnosis is a Flutter-based mobile application designed for veterinary diagnosis and management. It's a cross-platform application built for Android, iOS.",
         image: "/projects/ai-vetnary.jpg",
         githubUrl: "https://github.com/jerun276/Accurity",
+        linkedinUrl: "https://www.linkedin.com/posts/jerun-kingston-4538592bb_deeplearning-machinelearning-ai-activity-7382256074306891776-6nRT",
         liveUrl: "#"
       }
     ],
