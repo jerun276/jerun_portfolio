@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { personalInfo, techStack, heroContent } from '@/data';
+import AnimatedShaderBackground from '@/components/ui/animated-shader-background';
 
 export default function HeroSection() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -134,13 +135,18 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative z-0 min-h-screen flex items-center justify-center mb-8 pt-1 md:pt-1">
-      <div className="px-5 md:px-20 w-full">
+      {/* Animated Shader Background */}
+      <div className="absolute inset-0 z-0">
+        <AnimatedShaderBackground />
+      </div>
+
+      <div className="relative z-10 px-5 md:px-20 w-full">
         {/* Main Hero Content - Mobile First Layout */}
         <div className="flex flex-col lg:grid lg:grid-cols-3 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           
           {/* Profile Photo - First on mobile */}
           <div className="flex justify-center order-1 lg:order-1">
-            <div ref={profileRef} className="relative">
+            <div ref={profileRef} className="relative opacity-0">
               <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 p-1 bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400">
                 <img 
                   src="/jerun_prifile.png" 
@@ -160,7 +166,7 @@ export default function HeroSection() {
           {/* Content - Second on mobile */}
           <div className="lg:col-span-2 text-center order-2 lg:order-2">
             {/* Hero Text with Typewriter Animation */}
-            <div ref={textRef} className="mb-6 lg:mb-8">
+            <div ref={textRef} className="mb-6 lg:mb-8 opacity-0">
               <div className="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-1 sm:gap-4 mb-4 sm:mb-6">
                 <span className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">I'm</span>
                 <span className="bg-linear-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight min-h-[1.2em] sm:min-h-[1.5em] flex items-baseline">
@@ -171,7 +177,7 @@ export default function HeroSection() {
             </div>
 
             {/* Subtitle */}
-            <div ref={subtitleRef} className="mb-6 lg:mb-8">
+            <div ref={subtitleRef} className="mb-6 lg:mb-8 opacity-0">
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-300 mb-3 sm:mb-4">
                 {personalInfo.title}
               </h2>
@@ -181,7 +187,7 @@ export default function HeroSection() {
             </div>
 
             {/* Tech Stack */}
-            <div ref={techStackRef} className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 lg:mb-8 px-4 sm:px-0">
+            <div ref={techStackRef} className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 lg:mb-8 px-4 sm:px-0 opacity-0">
               {techStack.featured.map((tech) => (
                 <span 
                   key={tech}
@@ -193,7 +199,7 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0 opacity-0">
               <button 
                 onClick={() => {
                   const ascentSection = document.getElementById('ascent');
@@ -219,15 +225,15 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Scroll Indicator */}
-        <div ref={scrollIndicatorRef} className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 sm:gap-4">
-            <div className="w-6 h-10 sm:w-8 sm:h-12 border-2 border-gray-300 rounded-full flex justify-center items-start pt-1.5 sm:pt-2">
-              <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white rounded-full animate-bounce"></div>
-            </div>
-            <p className="text-xs sm:text-sm text-gray-400">Scroll to explore</p>
+      {/* Scroll Indicator */}
+      <div ref={scrollIndicatorRef} className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10 opacity-0">
+        <div className="flex flex-col items-center gap-2 sm:gap-4">
+          <div className="w-6 h-10 sm:w-8 sm:h-12 border-2 border-gray-300 rounded-full flex justify-center items-start pt-1.5 sm:pt-2">
+            <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white rounded-full animate-bounce"></div>
           </div>
+          <p className="text-xs sm:text-sm text-gray-400">Scroll to explore</p>
         </div>
       </div>
     </section>

@@ -185,8 +185,8 @@ function PixelCanvas({ colors, gap = 5, speed = 30 }: PixelCanvasProps) {
   }, [init, animate]);
 
   return (
-    <div ref={wrapRef} className="absolute inset-0 overflow-hidden">
-      <canvas ref={canvasRef} className="block" />
+    <div ref={wrapRef} className="absolute inset-0 w-full h-full overflow-hidden">
+      <canvas ref={canvasRef} className="block w-full h-full" />
     </div>
   );
 }

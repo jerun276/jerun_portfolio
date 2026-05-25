@@ -92,6 +92,15 @@ html {
   background: linear-gradient(45deg, #a78bfa, #f472b6, #22d3ee);
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 /* Loading Screen Styles */
 .loading-screen {
   position: fixed;

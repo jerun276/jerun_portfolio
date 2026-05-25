@@ -60,8 +60,8 @@ export const sectionContent = {
       {
         title: "AIESEC Member",
         company: "AIESEC in SLIIT",
-        period: "February 2025 - Present",
-        description: "Active member of the world's largest youth-led organization, participating in leadership programs and community impact projects.",
+        period: "February 2025 - January 2026",
+        description: "Former member of the world's largest youth-led organization, participating in leadership programs and community impact projects.",
         skills: ["Leadership", "Cross-Cultural Communication", "Project Management", "Community Service"],
         impact: "Leadership development & networking"
       }

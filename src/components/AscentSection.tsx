@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { sectionContent } from '@/data';
 import Tilt from 'react-parallax-tilt';
+import { PixelCanvas } from '@/components/ui/pixel-logo-grid';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -402,21 +403,24 @@ export default function AscentSection() {
 
         {/* Achievements Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          
+
           {/* Key Achievements */}
           <div ref={achievementsRef}>
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">Key Achievements</h3>
             <div className="space-y-4">
               {ascentData.achievements.map((achievement, index) => (
-                <div 
+                <div
                   key={index}
-                  className="achievement-item flex items-start gap-4 p-4 bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-gray-600 transition-all duration-300"
+                  className="achievement-item group relative overflow-hidden flex items-start gap-4 p-4 bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-gray-600 transition-all duration-300"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="w-8 h-8 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shrink-0 mt-1">
-                    <span className="text-white font-bold text-sm">{index + 1}</span>
+                  <PixelCanvas colors={["#c084fc", "#e879f9", "#a855f7"]} gap={6} speed={25} />
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="w-8 h-8 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-white font-bold text-sm">{index + 1}</span>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{achievement}</p>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">{achievement}</p>
                 </div>
               ))}
             </div>
@@ -427,12 +431,13 @@ export default function AscentSection() {
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">Advanced Skills</h3>
             <div className="grid grid-cols-2 gap-4">
               {ascentData.advancedSkills.map((skill, index) => (
-                <div 
+                <div
                   key={index}
-                  className="skill-item bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-purple-400/50 transition-all duration-300 hover:scale-105"
+                  className="skill-item group relative overflow-hidden bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-purple-400/50 transition-all duration-300 hover:scale-105"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <span className="text-gray-300 font-medium">{skill}</span>
+                  <PixelCanvas colors={["#22d3ee", "#06b6d4", "#67e8f9"]} gap={6} speed={25} />
+                  <span className="relative z-10 text-gray-300 font-medium">{skill}</span>
                 </div>
               ))}
             </div>

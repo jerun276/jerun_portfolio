@@ -4,7 +4,7 @@ export interface Experience {
   title: string;
   company: string;
   location: string;
-  type: 'work' | 'education' | 'freelance' | 'volunteer';
+  type: "work" | "education" | "freelance" | "volunteer";
   startDate: string;
   endDate?: string; // undefined means current
   current: boolean;
@@ -24,17 +24,31 @@ export const experiences: Experience[] = [
     type: "work",
     startDate: "2026-01",
     current: true,
-    description: "As a Senior Software Engineer, I am responsible for driving the technical direction of the startup and ensuring the successful delivery of scalable and high-quality software solutions. I work closely with the development team to transform ideas into production-ready systems.",
+    description:
+      "As a Senior Software Engineer, I am responsible for driving the technical direction of the startup and ensuring the successful delivery of scalable and high-quality software solutions. I work closely with the development team to transform ideas into production-ready systems.",
     achievements: [
       "Defined and executed the technical roadmap for startup products, ensuring scalability, performance, and maintainability",
       "Led end-to-end development of software solutions, from system design to deployment, aligning with business requirements",
       "Designed and managed cloud-based deployments using AWS (EC2, S3) to ensure high availability and reliability",
       "Implemented CI/CD pipelines using GitHub Actions, automating build, testing, and deployment workflows",
       "Mentored and guided a development team, improving code quality, collaboration, and delivery efficiency",
-      "Introduced best practices in software architecture, version control, and development workflows"
+      "Introduced best practices in software architecture, version control, and development workflows",
     ],
-    technologies: ["AWS", "EC2", "S3", "GitHub Actions", "CI/CD", "Cloud Deployment"],
-    skills: ["Technical Leadership", "System Design", "Cloud Architecture", "Team Mentoring", "Software Architecture"]
+    technologies: [
+      "AWS",
+      "EC2",
+      "S3",
+      "GitHub Actions",
+      "CI/CD",
+      "Cloud Deployment",
+    ],
+    skills: [
+      "Technical Leadership",
+      "System Design",
+      "Cloud Architecture",
+      "Team Mentoring",
+      "Software Architecture",
+    ],
   },
 
   {
@@ -46,16 +60,29 @@ export const experiences: Experience[] = [
     startDate: "2025-04",
     endDate: "2025-12",
     current: false,
-    description: "Developed innovative technology solutions and contributed to cutting-edge projects in telecommunications and information technology sector.",
+    description:
+      "Developed innovative technology solutions and contributed to cutting-edge projects in telecommunications and information technology sector.",
     achievements: [
       "Contributed to enterprise-level software development projects",
       "Implemented modern development practices and methodologies",
       "Collaborated with cross-functional teams on technology initiatives",
-      "Gained hands-on experience in professional software development"
+      "Gained hands-on experience in professional software development",
     ],
-    technologies: ["Flutter", "React.js", "Node.js", "Express.js", "SQLite", "Mobile Development"],
-    skills: ["Software Development", "Mobile App Development", "Team Collaboration", "Problem Solving"],
-    website: "https://unicom.lk"
+    technologies: [
+      "Flutter",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "Mobile Development",
+    ],
+    skills: [
+      "Software Development",
+      "Mobile App Development",
+      "Team Collaboration",
+      "Problem Solving",
+    ],
+    website: "https://unicom.lk",
   },
 
   {
@@ -65,19 +92,28 @@ export const experiences: Experience[] = [
     location: "Sri Lanka",
     type: "volunteer",
     startDate: "2025-02",
-    current: true,
-    description: "Active member of AIESEC, the world's largest youth-led organization. Participating in leadership development programs, cultural exchange initiatives, and community impact projects.",
+    endDate: "2026-01",
+    current: false,
+    description:
+      "Active member of AIESEC, the world's largest youth-led organization. Participating in leadership development programs, cultural exchange initiatives, and community impact projects.",
     achievements: [
       "Participating in leadership development workshops and training",
       "Contributing to community service and social impact projects",
       "Developing cross-cultural communication and teamwork skills",
-      "Networking with international students and professionals"
+      "Networking with international students and professionals",
     ],
-    technologies: ["Project Management Tools", "Communication Platforms", "Digital Marketing"],
-    skills: ["Leadership", "Cross-Cultural Communication", "Project Management", "Community Service"]
+    technologies: [
+      "Project Management Tools",
+      "Communication Platforms",
+      "Digital Marketing",
+    ],
+    skills: [
+      "Leadership",
+      "Cross-Cultural Communication",
+      "Project Management",
+      "Community Service",
+    ],
   },
-
-
 ];
 
 // Education Data
@@ -108,7 +144,7 @@ export const education: Education[] = [
       "CGPA: 3.64/4.0",
       "Currently pursuing degree in Computer Software Engineering",
       "Dean list holder for the first 2 semesters",
-      "Published research on AI-powered smart homes with Tesla coil wireless energy"
+      "Published research on AI-powered smart homes with Tesla coil wireless energy",
     ],
     relevantCourses: [
       "Software Engineering Principles",
@@ -119,14 +155,14 @@ export const education: Education[] = [
       "Computer Networks",
       "Probability & Statistics",
       "Data Structures & Algorithms",
-      "Software Engineering Principles"
+      "Software Engineering Principles",
     ],
     projects: [
       "Gov-Connect - A Government Service Portal",
       "AI-powered Smart Home System",
       "Spark Movie Ticket Booking System",
-      "School Management System"
-    ]
+      "School Management System",
+    ],
   },
   {
     id: "icbt-diploma",
@@ -140,7 +176,7 @@ export const education: Education[] = [
       "Completed comprehensive IT education program",
       "Gained foundation in educational technology strategies",
       "Developed skills in digital learning methodologies",
-      "Prepared for advanced software engineering studies"
+      "Prepared for advanced software engineering studies",
     ],
     relevantCourses: [
       "Information Technology Fundamentals",
@@ -148,8 +184,8 @@ export const education: Education[] = [
       "Digital Learning Strategies",
       "Computer Programming Basics",
       "Database Fundamentals",
-      "Web Technologies Introduction"
-    ]
+      "Web Technologies Introduction",
+    ],
   },
   {
     id: "jaffna-hindu-college",
@@ -163,16 +199,16 @@ export const education: Education[] = [
       "Completed Advanced Level studies with focus on ICT",
       "Strong foundation in business and accounting principles",
       "Early exposure to information and communication technology",
-      "Prepared for higher education in technology field"
+      "Prepared for higher education in technology field",
     ],
     relevantCourses: [
       "Information & Communication Technology",
       "Business Studies",
       "Accounting",
       "Economics",
-      "Mathematics"
-    ]
-  }
+      "Mathematics",
+    ],
+  },
 ];
 
 // Certifications
@@ -192,46 +228,74 @@ export const certifications: Certification[] = [
     name: "Supervised Machine Learning: Regression and Classification",
     issuer: "Coursera/Stanford University",
     date: "2024-06",
-    skills: ["Machine Learning", "Regression Analysis", "Classification Algorithms", "Python"]
+    skills: [
+      "Machine Learning",
+      "Regression Analysis",
+      "Classification Algorithms",
+      "Python",
+    ],
   },
   {
     id: "english-fluency-b2",
     name: "English Fluency Equivalent to CEFR Level B2",
     issuer: "Language Assessment Authority",
     date: "2024-03",
-    skills: ["English Communication", "Professional Writing", "Technical Documentation"]
+    skills: [
+      "English Communication",
+      "Professional Writing",
+      "Technical Documentation",
+    ],
   },
   {
     id: "career-skills-software-dev",
     name: "Introduction to Career Skills in Software Development",
     issuer: "Professional Development Institute",
     date: "2024-01",
-    skills: ["Software Development", "Career Planning", "Professional Skills", "Industry Best Practices"]
+    skills: [
+      "Software Development",
+      "Career Planning",
+      "Professional Skills",
+      "Industry Best Practices",
+    ],
   },
   {
     id: "programming-foundations",
     name: "Programming Foundations: Fundamentals",
     issuer: "LinkedIn Learning",
     date: "2023-12",
-    skills: ["Programming Fundamentals", "Problem Solving", "Algorithm Design", "Code Structure"]
+    skills: [
+      "Programming Fundamentals",
+      "Problem Solving",
+      "Algorithm Design",
+      "Code Structure",
+    ],
   },
   {
     id: "web-design-beginners",
     name: "Web Design for Beginners",
     issuer: "Online Learning Platform",
     date: "2023-10",
-    skills: ["Web Design", "UI/UX Principles", "HTML/CSS", "Responsive Design"]
+    skills: ["Web Design", "UI/UX Principles", "HTML/CSS", "Responsive Design"],
   },
   {
     id: "google-digital-marketing",
     name: "Digital Marketing and E-commerce Certification",
     issuer: "Google",
     date: "2024-02",
-    skills: ["Digital Marketing", "E-commerce", "SEO", "Social Media Marketing", "Analytics"]
-  }
+    skills: [
+      "Digital Marketing",
+      "E-commerce",
+      "SEO",
+      "Social Media Marketing",
+      "Analytics",
+    ],
+  },
 ];
 
 // Helper functions
-export const getCurrentExperiences = () => experiences.filter(exp => exp.current);
-export const getWorkExperience = () => experiences.filter(exp => exp.type === 'work');
-export const getFreelanceExperience = () => experiences.filter(exp => exp.type === 'freelance');
+export const getCurrentExperiences = () =>
+  experiences.filter((exp) => exp.current);
+export const getWorkExperience = () =>
+  experiences.filter((exp) => exp.type === "work");
+export const getFreelanceExperience = () =>
+  experiences.filter((exp) => exp.type === "freelance");
