@@ -78,7 +78,7 @@ export const sectionContent = {
         name: "ICEDT",
         tech: "React-native, Native-wind, Cross-platform, Learning-app",
         impact: "Available to Google Play Store and App Store",
-        description: "ICEDT is a cross-platform mobile application built using React Native and Native-wind. It is a learning app that provides users with a platform to learn and practice coding.",
+        description: "ICEDT is a cross-platform mobile application built using React Native and Native-wind. It is a learning app that provides users with a platform to learn and practice.",
         image: "/projects/icedt.jpg",
         githubUrl: "https://github.com/jerun276/icedt_mobile",
         linkedinUrl: "https://www.linkedin.com/posts/jerun-kingston-4538592bb_reactnative-expo-typescript-activity-7400383011877486592-6UjJ",
