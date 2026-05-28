@@ -18,14 +18,14 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: "inspire-senior-software-engineer",
-    title: "Senior Software Engineer",
+    title: "Software Engineer",
     company: "Inspire (Startup)",
     location: "Jaffna, Sri Lanka",
     type: "work",
     startDate: "2026-01",
     current: true,
     description:
-      "As a Senior Software Engineer, I am responsible for driving the technical direction of the startup and ensuring the successful delivery of scalable and high-quality software solutions. I work closely with the development team to transform ideas into production-ready systems.",
+      "As a Software Engineer, I am responsible for driving the technical direction of the startup and ensuring the successful delivery of scalable and high-quality software solutions. I work closely with the development team to transform ideas into production-ready systems.",
     achievements: [
       "Defined and executed the technical roadmap for startup products, ensuring scalability, performance, and maintainability",
       "Led end-to-end development of software solutions, from system design to deployment, aligning with business requirements",

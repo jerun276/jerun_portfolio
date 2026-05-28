@@ -42,7 +42,7 @@ export const sectionContent = {
 
     experiences: [
       {
-        title: "Senior Software Engineer",
+        title: "Software Engineer",
         company: "Inspire (Startup)",
         period: "Jan 2026 - Present",
         description: "Driving the technical direction of the startup, ensuring successful delivery of scalable and high-quality software solutions. Working closely with the development team to transform ideas into production-ready systems.",
@@ -156,7 +156,7 @@ export const sectionContent = {
     description: "Currently leading technical direction at a startup while pursuing my Bachelor's degree. Focused on scalable software solutions, cloud architecture, and team mentoring alongside mobile development and AI integration.",
 
     currentRole: {
-      title: "Senior Software Engineer & Undergraduate Student",
+      title: "Software Engineer & Undergraduate Student",
       company: "Inspire (Startup) & SLIIT",
       period: "Jan 2026 - Present",
       description: "Driving the technical direction of a startup, ensuring successful delivery of scalable software solutions. Leading end-to-end development from system design to deployment while pursuing Computer Software Engineering degree at SLIIT.",
