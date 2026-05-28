@@ -9,6 +9,7 @@ import AscentSection from '@/components/AscentSection';
 import CurrentFrontierSection from '@/components/CurrentFrontierSection';
 import ConnectSection from '@/components/ConnectSection';
 import LoadingScreen from '@/components/LoadingScreen';
+import SmoothScrollProvider from '@/components/SmoothScrollProvider';
 import { usePreloadManager, defaultPreloadItems } from '@/hooks/usePreloadManager';
 
 export default function Home() {
@@ -42,31 +43,33 @@ export default function Home() {
   }
 
   return (
-    <div className="relative content-reveal">
-      {/* Fixed Navbar */}
-      <Navbar />
-      
-      {/* Main Content Sections */}
-      <main>
-        <div id="home">
-          <HeroSection />
-        </div>
-        <div id="foundation">
-          <FoundationSection />
-        </div>
-        <div id="early-discoveries">
-          <EarlyDiscoveriesSection />
-        </div>
-        <div id="ascent">
-          <AscentSection />
-        </div>
-        <div id="current-frontier">
-          <CurrentFrontierSection />
-        </div>
-        <div id="connect">
-          <ConnectSection />
-        </div>
-      </main>
-    </div>
+    <SmoothScrollProvider>
+      <div className="relative content-reveal">
+        {/* Fixed Navbar */}
+        <Navbar />
+
+        {/* Main Content Sections */}
+        <main>
+          <div id="home">
+            <HeroSection />
+          </div>
+          <div id="foundation">
+            <FoundationSection />
+          </div>
+          <div id="early-discoveries">
+            <EarlyDiscoveriesSection />
+          </div>
+          <div id="ascent">
+            <AscentSection />
+          </div>
+          <div id="current-frontier">
+            <CurrentFrontierSection />
+          </div>
+          <div id="connect">
+            <ConnectSection />
+          </div>
+        </main>
+      </div>
+    </SmoothScrollProvider>
   );
 }
