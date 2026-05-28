@@ -6,7 +6,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { sectionContent } from '@/data';
 import Tilt from 'react-parallax-tilt';
-import { PixelCanvas } from '@/components/ui/pixel-logo-grid';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -283,17 +282,17 @@ export default function AscentSection() {
             {ascentData.majorProjects.map((project, index) => (
               <Tilt
                 key={index}
-                tiltMaxAngleX={10}
-                tiltMaxAngleY={10}
-                scale={activeProject === index ? 1.05 : 1.02}
-                transitionSpeed={600}
-                glareEnable={true}
-                glareMaxOpacity={0.2}
+                tiltMaxAngleX={5}
+                tiltMaxAngleY={5}
+                scale={1}
+                transitionSpeed={1200}
+                glareEnable={false}
+                tiltEnable={activeProject === index}
               >
-                <div 
-                  className={`project-card relative bg-gray-900/60 backdrop-blur-sm border rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${
-                    activeProject === index 
-                      ? 'border-purple-400 shadow-lg shadow-purple-400/20 transform scale-105' 
+                <div
+                  className={`project-card relative bg-gray-900/80 border rounded-2xl overflow-hidden cursor-pointer transition-[border-color,transform,box-shadow] duration-500 will-change-transform ${
+                    activeProject === index
+                      ? 'border-purple-400 shadow-lg shadow-purple-400/20 transform scale-105'
                       : 'border-gray-700 hover:border-gray-600'
                   }`}
                   style={{ transitionDelay: `${index * 200}ms` }}
@@ -306,6 +305,7 @@ export default function AscentSection() {
                         src={project.image}
                         alt={project.name}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 33vw"
                         className="object-cover"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
@@ -411,16 +411,13 @@ export default function AscentSection() {
               {ascentData.achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="achievement-item group relative overflow-hidden flex items-start gap-4 p-4 bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl hover:border-gray-600 transition-all duration-300"
+                  className="achievement-item flex items-start gap-4 p-4 bg-gray-900/70 border border-gray-700 rounded-xl hover:border-purple-400/40 transition-colors duration-300 will-change-transform"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <PixelCanvas colors={["#c084fc", "#e879f9", "#a855f7"]} gap={6} speed={25} />
-                  <div className="relative z-10 flex items-start gap-4">
-                    <div className="w-8 h-8 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shrink-0 mt-1">
-                      <span className="text-white font-bold text-sm">{index + 1}</span>
-                    </div>
-                    <p className="text-gray-300 leading-relaxed">{achievement}</p>
+                  <div className="w-8 h-8 bg-linear-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center shrink-0 mt-1">
+                    <span className="text-white font-bold text-sm">{index + 1}</span>
                   </div>
+                  <p className="text-gray-300 leading-relaxed">{achievement}</p>
                 </div>
               ))}
             </div>
@@ -433,11 +430,10 @@ export default function AscentSection() {
               {ascentData.advancedSkills.map((skill, index) => (
                 <div
                   key={index}
-                  className="skill-item group relative overflow-hidden bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-xl p-4 text-center hover:border-purple-400/50 transition-all duration-300 hover:scale-105"
+                  className="skill-item bg-gray-900/70 border border-gray-700 rounded-xl p-4 text-center hover:border-purple-400/50 hover:scale-105 transition-[border-color,transform] duration-300 will-change-transform"
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <PixelCanvas colors={["#22d3ee", "#06b6d4", "#67e8f9"]} gap={6} speed={25} />
-                  <span className="relative z-10 text-gray-300 font-medium">{skill}</span>
+                  <span className="text-gray-300 font-medium">{skill}</span>
                 </div>
               ))}
             </div>

@@ -141,17 +141,19 @@ export default function CurrentFrontierSection() {
 
     }, sectionRef);
 
-    // Mouse-follow 3D on header (using quickTo, no setState)
+    // Mouse-follow 3D on header
     let handleMouseMove: ((e: MouseEvent) => void) | null = null;
     if (headerInnerRef.current) {
-      const xTo = gsap.quickTo(headerInnerRef.current, "rotateY", { duration: 0.6, ease: "power2.out" });
-      const yTo = gsap.quickTo(headerInnerRef.current, "rotateX", { duration: 0.6, ease: "power2.out" });
-
       handleMouseMove = (e: MouseEvent) => {
         const x = (e.clientX / window.innerWidth) * 2 - 1;
         const y = (e.clientY / window.innerHeight) * 2 - 1;
-        xTo(x * 3);
-        yTo(-y * 3);
+        gsap.to(headerInnerRef.current, {
+          rotationY: x * 3,
+          rotationX: -y * 3,
+          duration: 0.6,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
       };
 
       window.addEventListener('mousemove', handleMouseMove);
@@ -209,7 +211,7 @@ export default function CurrentFrontierSection() {
 
         {/* Tab Navigation */}
         <div ref={tabsRef} className="flex justify-center mb-16 px-4">
-          <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-2 w-full max-w-2xl">
+          <div className="bg-gray-900/80 border border-gray-700 rounded-2xl p-2 w-full max-w-2xl">
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-0">
               {tabs.map((tab, index) => (
                 <button
@@ -235,14 +237,13 @@ export default function CurrentFrontierSection() {
           {activeTab === 0 && (
             <div className="min-h-[500px]">
               <Tilt
-                tiltMaxAngleX={5}
-                tiltMaxAngleY={5}
-                scale={1.02}
-                transitionSpeed={1000}
-                glareEnable={true}
-                glareMaxOpacity={0.1}
+                tiltMaxAngleX={3}
+                tiltMaxAngleY={3}
+                scale={1}
+                transitionSpeed={1200}
+                glareEnable={false}
               >
-                <div className="content-card bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-3xl p-8 md:p-12">
+                <div className="content-card bg-gray-900/70 border border-gray-700 rounded-3xl p-8 md:p-12">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                       <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -299,14 +300,13 @@ export default function CurrentFrontierSection() {
                   return (
                     <Tilt
                       key={index}
-                      tiltMaxAngleX={12}
-                      tiltMaxAngleY={12}
-                      scale={1.03}
-                      transitionSpeed={600}
-                      glareEnable={true}
-                      glareMaxOpacity={0.15}
+                      tiltMaxAngleX={8}
+                      tiltMaxAngleY={8}
+                      scale={1}
+                      transitionSpeed={1000}
+                      glareEnable={false}
                     >
-                      <div className="content-card bg-gray-900/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 text-center hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/20 transition-all duration-300 group">
+                      <div className="content-card bg-gray-900/70 border border-gray-700 rounded-2xl p-6 text-center hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/20 transition-[border-color,box-shadow] duration-300 group">
                         <div className="w-16 h-16 bg-linear-to-r from-purple-400 to-pink-400 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                           <span className="text-white font-bold text-lg">{tech.slice(0, 2).toUpperCase()}</span>
                         </div>
@@ -335,14 +335,13 @@ export default function CurrentFrontierSection() {
                 {frontierData.focus.map((focus, index) => (
                   <Tilt
                     key={index}
-                    tiltMaxAngleX={10}
-                    tiltMaxAngleY={10}
-                    scale={1.03}
-                    transitionSpeed={800}
-                    glareEnable={true}
-                    glareMaxOpacity={0.15}
+                    tiltMaxAngleX={6}
+                    tiltMaxAngleY={6}
+                    scale={1}
+                    transitionSpeed={1000}
+                    glareEnable={false}
                   >
-                    <div className="content-card bg-gray-900/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 h-64 flex flex-col justify-center items-center text-center hover:border-cyan-400/50 transition-all duration-300">
+                    <div className="content-card bg-gray-900/70 border border-gray-700 rounded-2xl p-8 h-64 flex flex-col justify-center items-center text-center hover:border-cyan-400/50 transition-[border-color] duration-300">
                       <div className="w-20 h-20 bg-linear-to-r from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center mb-6">
                         <span className="text-white font-bold text-2xl">{index + 1}</span>
                       </div>
