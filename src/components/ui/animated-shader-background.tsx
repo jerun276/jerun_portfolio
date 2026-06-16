@@ -93,12 +93,27 @@ const AnimatedShaderBackground = () => {
     scene.add(mesh);
 
     let frameId: number;
+    let isVisible = true;
+
     const animate = () => {
+      if (!isVisible) return;
       material.uniforms.iTime.value += 0.016;
       renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
     };
     animate();
+
+    // Pause when off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          frameId = requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(container);
 
     const handleResize = () => {
       if (!container) return;
@@ -109,6 +124,7 @@ const AnimatedShaderBackground = () => {
 
     return () => {
       cancelAnimationFrame(frameId);
+      observer.disconnect();
       window.removeEventListener('resize', handleResize);
       container.removeChild(renderer.domElement);
       geometry.dispose();
